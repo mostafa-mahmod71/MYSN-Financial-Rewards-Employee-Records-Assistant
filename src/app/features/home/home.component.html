@@ -1,0 +1,72 @@
+
+<div class="pt-24 px-6 text-white">
+
+    
+  <!-- Header -->
+  <div class="mb-8 opacity-70 md:flex md:justify-around hover:text-white/70  md:items-center text-center  pb-5">
+    <p class="mt-2 text-3xl  ">
+        {{dict().welcome}} <span class="font-bold ">{{ user().name }} </span>    
+    </p>
+    <h1 class="text-3xl font-bold "> <span class="text-amber-200  ">MYSN</span> Dashboard</h1>
+    <p class="text-lg ">
+      {{ today() | date:' EEEE, d MMMM y' }}
+    </p>
+        <p class="text-lg ">
+      {{today() | date: 'hh:mm a'}}
+    </p>
+
+  </div>
+
+  
+  <!-- Cards -->
+  <div class="grid md:grid-cols-3 gap-6 mb-10">
+
+    <!-- Forms Count -->
+    <div class="bg-white/10 backdrop-blur-md p-6 rounded-xl hover:bg-white/20 shadow-lg">
+      <h2 class="text-lg opacity-80 mb-2">{{dict().total_forms}}</h2>
+      <p class="text-3xl font-bold">{{ userForms().length }}</p>
+    </div>
+
+    <!-- Total Net -->
+    <div class="bg-white/10 backdrop-blur-md p-6 rounded-xl hover:bg-white/20 shadow-lg">
+      <h2 class="text-lg opacity-80 mb-2">{{dict().total_net}}</h2>
+      <p class="text-3xl font-bold">
+        {{ totalNet() | number }}
+      </p>
+    </div>
+
+    <!-- Latest Month -->
+    <div class="bg-white/10 backdrop-blur-md p-6 rounded-xl hover:bg-white/20 shadow-lg">
+      <h2 class="text-lg opacity-80 mb-2">{{dict().latest_forms}}</h2>
+      <p class="text-xl font-semibold">
+        {{ latestForm()?.formMonth }}/{{ latestForm()?.formYear }}
+      </p>
+    </div>
+
+  </div>
+
+  <!-- Last Form Preview -->
+  <div class="bg-white/10 backdrop-blur-md p-6 rounded-xl hover:bg-white/20 shadow-lg">
+    <h2 class="text-xl font-semibold mb-4">{{dict().view_details}}</h2>
+
+    @if(latestForm()){
+      <p class="mb-2">{{dict().form_id}} : <span class="ms-2">{{ latestForm()?.formDescription }} </span> </p>
+      <p class="mb-2">{{dict().creator}} : <span class="ms-2">{{ latestForm()?.userCreator }}</span>  </p>
+      <p class="mb-2">{{dict().emps_length}} : <span class="ms-2">{{ latestForm()?.emps?.length }}</span> </p>
+      <p class="mb-2">{{dict().total_net}} : <span class="ms-2">{{ latestForm()?.formTotal?.totalNet }}</span> </p>
+    }@else{
+        <p class="mb-2"> {{dict().no_forms}} </p>
+    }
+  </div>
+  
+
+</div>
+<div class="stars-container pointer-events-none  z-0">
+    <div id="stars"></div>
+    <div id="stars2"></div>
+    <div id="stars3"></div>
+</div>
+
+<section class="relative z-10 md:my-20">
+</section>
+    

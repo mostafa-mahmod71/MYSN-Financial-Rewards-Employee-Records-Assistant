@@ -1,0 +1,127 @@
+<nav class=" fixed w-full z-20 top-0 backdrop-blur-lg  shadow-lg ">
+  <div class="max-w-screen-xl flex flex-wrap items-center justify-between mx-auto px-4 py-2">
+
+       <!-- drawer init and show -->
+    <div class="text-center">
+   <button 
+   (click)="toggleMainMenu()"
+   class="text-white bg-blue-300/20 cursor-pointer  box-border border border-transparent hover:bg-brand/50  shadow-md   rounded-base text-md px-4 py-2.5 " type="button"
+    >
+    <i class="fa-solid fa-warehouse"></i>
+   {{ dict().main_list }}
+   </button>
+    </div>
+
+    <!-- options  -->
+    <div class="shadow-md">
+      <button 
+         (click)="lang()"
+         class="text-white bg-blue-300/20 cursor-pointer  box-border border border-transparent hover:bg-brand/50  rounded-base text-md px-2 py-1 " type="button"
+    >
+    <i class="fa-solid fa-language"></i>
+      {{ dict().lang }}
+
+   </button>
+    </div>
+
+        <a
+    routerLink="/home"  class="flex items-center space-x-3 rtl:space-x-reverse">
+    <span class="self-center text-xl text-white font-semibold whitespace-nowrap">MYSN</span>
+    <img src="/imgs/logo.png" class="h-10 opacity-90 rounded-base" alt="MYSN logo" />
+    </a>
+  </div>
+</nav>
+
+       <!-- overlay  -->
+@if (menuisOpen()) {
+  <div 
+    (click)="toggleMainMenu()" 
+    class="fixed inset-0 bg-black/50 z-25 backdrop-blur-xs transition-opacity">
+  </div>
+}
+    <!-- drawer component -->
+<div 
+    [class.translate-x-0]="menuisOpen()"
+     [class.-translate-x-full]="!menuisOpen()"
+     [class.rtl:translate-x-full]="!menuisOpen()"
+  class=" bg-blue-200/90 fixed top-0 start-0 rounded-r-base  z-30 w-8/10 md:w-80 h-screen p-4 overflow-y-auto  transition-transform duration-300" tabindex="-1" >
+  <div class="border-b border-default pb-4 flex items-center">
+      <a class="flex items-center space-x-2 rtl:space-x-reverse">
+         <img src="/imgs/logo.png" class=" rounded-3xl h-6 w-6" alt="Flowbite Logo" />
+         <span class="self-center text-lg font-semibold whitespace-nowrap text-heading">MYSN</span>
+      </a>
+      <button
+      (click)="toggleMainMenu()"
+      type="button" class="cursor-pointer text-body bg-transparent hover:text-heading hover:bg-neutral-tertiary rounded-base w-9 h-9 absolute top-2.5 end-2.5 flex items-center justify-center">
+         <svg class="w-5 h-5" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="none" viewBox="0 0 24 24"><path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18 17.94 6M18 18 6.06 6"/></svg>
+         <span class="sr-only">   {{ dict().close }}
+</span>
+      </button>
+   </div>
+  <div class="py-5 overflow-y-auto">
+      <ul class="space-y-2 font-medium">
+         <li>
+            <a routerLink="/home" routerLinkActive="bg-neutral-tertiary text-fg-brand" class="cursor-pointer flex items-center px-2 py-1.5 text-body rounded-base hover:bg-neutral-tertiary hover:text-fg-brand group">
+               <i class="fa-solid fa-house-user"></i>
+               <span class="ms-3">   {{ dict().home }}
+</span>
+            </a>
+         </li>
+
+    
+         <li>
+            <button type="button" class="cursor-pointer flex items-center w-full justify-between px-2 py-1.5 text-body rounded-base hover:bg-neutral-tertiary hover:text-fg-brand group" aria-controls="dropdown-example" data-collapse-toggle="dropdown-example">
+                  <i class="fa-solid fa-sack-dollar"></i>
+                  <span class="flex-1 ms-3 text-left rtl:text-right whitespace-nowrap">   {{ dict().salaries }}</span>
+                  <svg class="w-5 h-5" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="none" viewBox="0 0 24 24"><path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="m19 9-7 7-7-7"/></svg>
+            </button>
+            <ul id="dropdown-example" class="hidden shadow bg-blue-200/50 rounded-lg py-2 space-y-2">
+
+                  <li>
+                     <a
+                     (click)="toggleMainMenu()"
+                     routerLink="/bonus" routerLinkActive="bg-neutral-tertiary text-fg-brand"
+                     class="pl-10 py-0.5 flex  items-center px-2 cursor-pointer text-body rounded-base hover:bg-neutral-tertiary hover:text-fg-brand group">{{ dict().bonus }}</a>
+                  </li>
+                  <li>
+                     <a
+                     (click)="toggleMainMenu()"
+                     routerLink="/reports" routerLinkActive="bg-neutral-tertiary text-fg-brand"
+                     class="pl-10 py-0.5 flex items-center px-2 cursor-pointer text-body rounded-base hover:bg-neutral-tertiary hover:text-fg-brand group">{{dict().reports}}</a>
+                  </li>
+            </ul>
+         </li>
+         @if(user()?.role === "admin"){
+    
+         <li>
+            <button (click)="togglesalarymenu()" type="button" class="cursor-pointer flex items-center w-full justify-between px-2 py-1.5 text-body rounded-base hover:bg-neutral-tertiary hover:text-fg-brand group">
+                  <i class="fa-solid fa-bars-staggered"></i>
+                  <span class="flex-1 ms-3 text-left rtl:text-right whitespace-nowrap">{{ dict().settings }}</span>
+                  <svg class="w-5 h-5" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="none" viewBox="0 0 24 24"><path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="m19 9-7 7-7-7"/></svg>
+            </button>
+            <ul [class.hidden]="!salaryisOpen()" class=" shadow bg-blue-200/50 rounded-lg py-2 space-y-2">
+                  <li>
+                     <a class="pl-10 py-0.5 flex items-center px-2 cursor-pointer text-body rounded-base hover:bg-neutral-tertiary hover:text-fg-brand group">{{ dict().users }}</a>
+                  </li>
+
+            </ul>
+         </li>
+}
+
+         <li>
+            <a 
+            (click)="logout()" class="flex cursor-pointer items-center px-2 py-1.5 text-body rounded-base hover:bg-neutral-tertiary hover:text-fg-brand group">
+               <i class="fa-solid fa-right-from-bracket"></i>
+               <span class="flex-1 ms-3 whitespace-nowrap"> {{ dict().logout }}</span>
+            </a>
+         </li>
+      </ul>
+   </div>
+</div>
+
+
+
+
+
+
+

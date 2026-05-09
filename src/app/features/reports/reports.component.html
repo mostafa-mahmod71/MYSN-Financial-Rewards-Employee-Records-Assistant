@@ -1,0 +1,107 @@
+<form [formGroup]="filterForm" (submit)="getForms()" class="container mx-auto my-20 p-4 text-white" >
+  <!-- هيدر الصفحة -->
+  <div class="mb-8 border-r-4 border-cyan-500 pr-4">
+    <h1 class="text-3xl font-bold">مركز التقارير والاستعلامات</h1>
+    <p class="text-white/60 mt-1">يمكنك البحث عن الاستمارات المعتمدة وطباعة التقارير الرسمية</p>
+  </div>
+
+  <!-- منطقة الفلاتر -->  
+  <div class="text-center grid grid-cols-1 md:grid-cols-4 gap-4 p-6 bg-white/5 rounded-2xl border border-white/10 backdrop-blur-md mb-8">
+    
+    <!-- نوع الاستمارة -->
+    <div class="flex flex-col gap-2">
+      <label class="text-sm font-medium opacity-80">نوع الاستمارة</label>
+      <select
+      formControlName="type"
+       class="bg-slate-900 border border-white/20 rounded-xl p-3 outline-none focus:border-cyan-500">
+        <option value="all">الكل</option>
+        <option value="mixed">مستقلة</option>
+        <option value="directorate">مجلس ادارة </option>
+        <option value="generalAssembly">جمعية عامة</option>
+      </select>
+    </div>
+
+    <!-- الشهر -->
+    <div class="flex flex-col gap-2">
+      <label class="text-sm font-medium opacity-80">الشهر</label>
+      <select
+      formControlName="month"
+       class="bg-slate-900 border border-white/20 rounded-xl p-3 outline-none focus:border-cyan-500">
+        @for (m of [1,2,3,4,5,6,7,8,9,10,11,12]; track m) {
+          <option [value]="m">{{ m }}</option>
+        }
+      </select>
+    </div>
+
+    <!-- السنة -->
+    <div class="flex flex-col gap-2">
+      <label class="text-sm font-medium opacity-80">السنة</label>
+      <input
+      formControlName="year"
+      type="text" placeholder="2026" class="bg-slate-900 border border-white/20 rounded-xl p-3 outline-none focus:border-cyan-500 text-center">
+    </div>
+
+    <!-- زر البحث -->
+    <div class="flex items-end">
+      <button
+      (click)="getForms()"
+      type="submit"
+      class="w-full bg-cyan-600 cursor-pointer hover:bg-cyan-500 transition-all p-3 rounded-xl font-bold flex items-center justify-center gap-2 shadow-lg shadow-cyan-900/20">
+        <i class="fa-solid fa-magnifying-glass"></i>
+        بحث
+      </button>
+    </div>
+  </div>
+
+  <!-- جدول عرض النتائج -->
+  <div class="overflow-x-auto custom-scrollbar bg-white/5 rounded-2xl border border-white/10">
+    <table class="w-full text-center min-w-[1000px]">
+      <thead class="bg-white/10 text-cyan-400">
+        <tr>
+          <th class="p-4 border-b border-white/10 font-semibold">رقم الاستمارة</th>
+          <th class="p-4 border-b border-white/10 font-semibold">وصف الاستمارة</th>
+          <th class="p-4 border-b border-white/10 font-semibold">التاريخ</th>
+          <th class="p-4 border-b border-white/10 font-semibold">المستخدم</th>
+          <th class="p-4 border-b border-white/10 font-semibold">التقارير</th>
+          <th class="p-4 border-b border-white/10 font-semibold text-center">الإجراءات</th>
+        </tr>
+      </thead>
+      <tbody>
+        @if(currForms()){
+          @for (form of currForms(); track form.id) {
+                    <!-- مثال لسطر استمارة -->
+        <tr class="border-b border-white/5 hover:bg-white/5 transition-colors group">
+          <td class="p-4 font-mono">{{form.id}}</td>
+          <td class="p-4 font-bold text-white/90">{{form.formDescription}}</td>
+          <td class="p-4 opacity-70">{{form.createdAt}}</td>
+          <td class="p-4 opacity-70">{{form.userCreator}}</td>
+          <td class="p-4 opacity-70">
+                <select class="bg-slate-900 border border-white/20 rounded-xl p-3 outline-none focus:border-cyan-500">
+                    <option value="colecForm">كشف تجميعي</option>
+                    <option value="empsForm">استمارة صرف</option>
+                    <option value="colecInsh">كشف تجميعي معاشات </option>
+                    <option value="Journal"> اذن قيد </option>
+                </select>    
+          </td>
+          <td class="p-4 flex justify-center gap-2">
+            <!-- الزرار اللي هيفتح المنيو اللي قولت عليها -->
+            <button class="bg-white/10 cursor-pointer hover:bg-white/20 px-2 py-2 rounded-lg text-sm flex items-center  border border-white/10">
+              <i class="me-2 fa-solid fa-print"></i>
+             الطباعة
+            </button>
+          </td>
+        </tr>
+
+          }@empty {
+            <tr>
+              <td colspan="6" class="p-10 text-center text-white/40">
+                لا توجد استمارات مطابقة للبحث حالياً
+              </td>
+            </tr>
+          }
+        }
+        
+      </tbody>
+    </table>
+  </div>
+</form>

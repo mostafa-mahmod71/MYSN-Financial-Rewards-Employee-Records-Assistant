@@ -1,0 +1,79 @@
+/* حاوية النجوم: بتملا الشاشة وموجودة ورا كل حاجة */
+.stars-container {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100vh;
+    background: transparent;
+    overflow: hidden;
+    z-index: 0; /* ورا الفورم */
+}
+
+/* فنكشن توليد النجوم (Shadows) - دي خدعة CSS صايعة */
+/* النجوم الصغيرة */
+#stars {
+    width: 1px;
+    height: 1px;
+    background: transparent;
+    box-shadow: 1747px 1311px #FFF , 1897px 921px #FFF , 1381px 1618px #FFF , 174px 1772px #FFF , 1083px 105px #FFF , 1632px 1025px #FFF , 1318px 1735px #FFF , 1386px 1279px #FFF , 784px 108px #FFF , 1317px 1198px #FFF , 192px 1133px #FFF , 1136px 1472px #FFF , 1860px 1730px #FFF , 1803px 610px #FFF , 1318px 1258px #FFF;
+    animation: animStar 50s linear infinite;
+}
+
+#stars:after {
+    content: " ";
+    position: absolute;
+    top: 2000px; /* عشان الـ loop يكمل */
+    width: 1px;
+    height: 1px;
+    background: transparent;
+    box-shadow: 1747px 1311px #FFF , 1897px 921px #FFF , 1381px 1618px #FFF , 174px 1772px #FFF , 1083px 105px #FFF , 1632px 1025px #FFF , 1318px 1735px #FFF , 1386px 1279px #FFF , 784px 108px #FFF , 1317px 1198px #FFF , 192px 1133px #FFF , 1136px 1472px #FFF , 1860px 1730px #FFF , 1803px 610px #FFF , 1318px 1258px #FFF;
+}
+
+/* النجوم المتوسطة */
+#stars2 {
+    width: 2px;
+    height: 2px;
+    background: transparent;
+    box-shadow: 105px 105px #FFF , 550px 200px #FFF , 1200px 600px #FFF , 1800px 1300px #FFF , 400px 1600px #FFF , 900px 1800px #FFF , 1500px 200px #FFF , 1900px 900px #FFF , 200px 1100px #FFF , 700px 1400px #FFF;
+    animation: animStar 100s linear infinite;
+}
+
+#stars2:after {
+    content: " ";
+    position: absolute;
+    top: 2000px;
+    width: 2px;
+    height: 2px;
+    background: transparent;
+    box-shadow: 105px 105px #FFF , 550px 200px #FFF , 1200px 600px #FFF , 1800px 1300px #FFF , 400px 1600px #FFF , 900px 1800px #FFF , 1500px 200px #FFF , 1900px 900px #FFF , 200px 1100px #FFF , 700px 1400px #FFF;
+}
+
+/* النجوم الكبيرة */
+#stars3 {
+    width: 3px;
+    height: 3px;
+    background: transparent;
+    box-shadow: 300px 300px #FFF , 900px 100px #FFF , 1600px 800px #FFF , 1100px 1500px #FFF , 500px 1800px #FFF;
+    animation: animStar 150s linear infinite;
+}
+
+#stars3:after {
+    content: " ";
+    position: absolute;
+    top: 2000px;
+    width: 3px;
+    height: 3px;
+    background: transparent;
+    box-shadow: 300px 300px #FFF , 900px 100px #FFF , 1600px 800px #FFF , 1100px 1500px #FFF , 500px 1800px #FFF;
+}
+
+/* الأنيماشين: النجوم بتتحرك لفوق */
+@keyframes animStar {
+    from {
+        transform: translateY(0px);
+    }
+    to {
+        transform: translateY(-2000px);
+    }
+}

@@ -1,0 +1,234 @@
+<section [formGroup]="bonusForm" class="my-17 text-white">
+  <header class="container mx-auto flex gap-x-2 items-center text-lg text-center">
+      <div>
+      <label for="formName"> {{dict().Form_Name}} *</label>
+      <input
+        formControlName="formDescription"
+        class="ms-3 md:min-w-100 p-2 text-lg text-white bg-white/5 rounded-xl border border-white/20 focus:border-blue-400 focus:outline-none focus:ring-0 peer"
+        required
+        type="text"
+        id="formName"
+      />
+      </div>
+
+      <div>
+      <label for="formType"> {{dict().Form_Type}} *</label>
+      <select
+        formControlName="formType"
+        class="ms-3 md:min-w-70 p-2 text-lg text-white bg-white/5 rounded-xl border border-white/20 focus:border-blue-400 focus:outline-none focus:ring-0 peer"
+        required
+        id="formType"
+      >
+          <option class="text-gray-600" value="mixed">{{dict().Mixed}}</option>
+          <option class="text-gray-600" value="directorate">{{dict().Directorate}}</option>
+          <option class="text-gray-600" value="generalAssembly">{{dict().General}}</option>
+    </select>
+      </div>
+
+      <div>
+      <label for="formMonth"> {{dict().Form_Month}} *</label>
+      <input
+        formControlName="formMonth"
+        class="ms-3 md:min-w-20 p-2 text-lg text-white bg-white/5 rounded-xl border border-white/20 focus:border-blue-400 focus:outline-none focus:ring-0 peer"
+        required
+        type="text"
+        id="formMonth"
+      />
+              @if (bonusForm.get('formMonth')?.errors?.['pattern']) {
+        <span class="text-center text-red-400 text-xs pt-1 block">
+          {{dict().Valed_Month}}</span>
+        } 
+      </div>
+   
+    <div>
+      <label for="formYear"> {{dict().Form_Year}} *</label>
+      <input
+        formControlName="formYear"
+        class="ms-3 md:min-w-20 p-2 text-lg text-white bg-white/5 rounded-xl border border-white/20 focus:border-blue-400 focus:outline-none focus:ring-0 peer"
+        required
+        type="text"
+        id="formYear"
+      />
+        @if (bonusForm.get('formYear')?.errors?.['pattern']) {
+        <span class="text-center text-red-400 text-xs pt-1 block">
+          {{dict().Valed_Year}} </span>
+        } 
+    </div>
+
+
+  </header>
+  <main class="mt-3">
+    <div class="container mx-auto rounded-2xl border border-white/10 bg-white/5 backdrop-blur-sm">
+      <table
+        class="w-full text-start border-separate border-spacing-0 block md:table overflow-x-auto overflow-y-visible"
+      >
+        <thead class="sticky top-15 bg-cyan-950 z-40">
+          <tr class="bg-white/10 uppercase text-md tracking-wider opacity-80 text-center">
+            <th class="p-4 whitespace-nowrap font-semibold rounded-ts-2xl">{{dict().Delete}}</th>
+            <th class="p-4 whitespace-nowrap font-semibold">{{dict().Code}} *</th>
+            <th class="p-4 whitespace-nowrap font-semibold">{{dict().Emp_name}}</th>
+            <th class="p-4 whitespace-nowrap font-semibold">{{dict().Value}} *</th>
+            <th class="p-4 whitespace-nowrap font-semibold">{{dict().Insh_Type}} *</th>
+            <th class="p-4 whitespace-nowrap font-semibold">{{dict().Insh_Box}}</th>
+            <th class="p-4 whitespace-nowrap font-semibold text-center">{{dict().Tax_Type}}</th>
+            <th class="p-4 whitespace-nowrap font-semibold rounded-te-2xl text-center">{{dict().Tax_Perc}}</th>
+          </tr>
+        </thead>
+        <tbody formArrayName="emps" class="divide-y divide-white/5">
+          @for (emp of empsArray.controls; track emp) {
+            <tr [formGroupName]="$index" class="hover:bg-white/5 transition-colors">
+              <td class="p-3 w-10">
+                <i
+                  (click)="deleteRow($index)"
+                  class="fa-solid fa-trash-can text-lg text-red-300/30 transition-all duration-300 hover:text-red-400 cursor-pointer"
+                ></i>
+              </td>
+              <td class="p-3 w-30">
+                <input
+                  formControlName="code"
+                  type="text"
+                  (input)="getEmp($event, $index)"
+                  inputmode="numeric"
+                  [class.!bg-red-900]="emp.get('code')?.errors?.['duplicate']"
+                  [class.!border-red-500]="emp.get('code')?.errors?.['duplicate']"
+                  class="px-4 py-3 w-full text-base text-white bg-white/5 rounded-xl border border-white/10 focus:border-blue-400 focus:outline-none focus:ring-0"
+                />
+                @if (emp.get('code')?.errors?.['pattern']) {
+                  <span class="text-red-400 text-xs text-start block">
+                    code must be 4 to 9 number</span
+                  >
+                }
+              </td>
+              <td class="p-3 w-50">
+                <input
+                  formControlName="name"
+                  type="text"
+                  readonly
+                  class="px-4 py-3 w-full cursor-no-drop text-base text-white bg-white/3 rounded-xl border border-white/10 focus:border-blue-400 focus:outline-none focus:ring-0 opacity-60"
+                />
+              </td>
+              <td class="p-3 w-30">
+                <input
+                  formControlName="value"
+                  type="text"
+                  inputmode="numeric"
+                  (change)="calcTotal()"
+                  class="px-4 py-3 w-full text-base text-white bg-white/5 rounded-xl border border-white/10 focus:border-blue-400 focus:outline-none focus:ring-0"
+                />
+                @if (emp.get('value')?.errors?.['pattern']) {
+                  <span class="text-red-400 text-xs text-start block">
+                    value required && must be number</span
+                  >
+                } @else if (emp.get('value')?.errors?.['max']) {
+                  <span class="text-red-400 text-xs text-start block"> max value is : 999000</span>
+                }
+              </td>
+              <td class="p-3 w-30">
+                <select
+                  formControlName="inshType"
+                  class="px-5 py-3 w-full text-base text-white bg-white/5 rounded-xl border border-white/10 focus:border-blue-400 focus:outline-none focus:ring-0 text-center"
+                >
+                  <option class="text-gray-600 rounded-2xl" value="upAge">{{dict().Insh_Up}}</option>
+                  <option class="text-gray-600 rounded-2xl" value="underAge">{{dict().Insh_Under}}</option>
+                  <option class="text-gray-600 rounded-2xl" value="without">{{dict().Insh_Without}}</option>
+                </select>
+              </td>
+              <td class="p-3 w-10">
+                @if (emp.get('inshType')?.value === 'upAge') {
+                  <input
+                    formControlName="inshBox"
+                    type="text"
+                    inputmode="numeric"
+                    class="w-full p-3 text-base text-white bg-white/5 rounded-xl border border-white/10 focus:border-blue-400 focus:outline-none focus:ring-0 text-center"
+                  />
+                }
+              </td>
+              <td class="p-3 w-30">
+                <select
+                  formControlName="taxType"
+                  class="px-4 py-3 w-full text-base text-white bg-white/5 rounded-xl border border-white/10 focus:border-blue-400 focus:outline-none focus:ring-0 text-center"
+                >
+                  <option class="text-gray-600 rounded-2xl" value="auto">{{dict().Tax_Auto}}</option>
+                  <option class="text-gray-600 rounded-2xl" value="manual">{{dict().Tax_Manual}}</option>
+                </select>
+              </td>
+              <td class="p-3 w-10">
+                @if (emp.get('taxType')?.value === 'manual') {
+                  <select
+                    formControlName="taxPerc"
+                    type="text"
+                    class="w-full p-3 text-base text-white bg-white/5 rounded-xl border border-white/10 focus:border-blue-400 focus:outline-none focus:ring-0 text-center"
+                  >
+                    <option class="text-black" value=".1">10%</option>
+                    <option class="text-black" value=".15">15%</option>
+                    <option class="text-black" value=".2">20%</option>
+                    <option class="text-black" value=".225">22.5%</option>
+                    <option class="text-black" value=".25">25%</option>
+                    <option class="text-black" value=".275">27.5%</option>
+                  </select>
+                  @if (emp.get('taxPerc')?.errors?.['pattern']) {
+                    <span class="text-red-400 text-xs text-start block">
+                      percentage of tax must be ( 10 , 15 , 20 , 22.5 , 25 , 27.5)
+                    </span>
+                  }
+                }
+              </td>
+            </tr>
+          }
+        </tbody>
+        <tfoot>
+          <tr class="hover:bg-white/5 hover:text-white cursor-pointer" (click)="addNewRow()">
+            <td colspan="8">
+              <p
+                class="m-4 flex items-center text-amber-200 transition-colors text-lg cursor-pointer font-medium"
+              >
+                <i class="fa-solid fa-plus-circle me-2"></i>
+                {{dict().Add_emp}}
+              </p>
+            </td>
+          </tr>
+
+          <tr class="bg-white/5">
+            <td colspan="8" class="p-4">
+              <div class="flex items-center justify-around text-md font-medium">
+                <!-- Left side: Stats -->
+                <div class="flex gap-8 opacity-80">
+                  <span
+                    >{{dict().Count}}: <span class="text-amber-200 text-lg">{{ empsArray.length }}</span></span
+                  >
+                  <span
+                    >{{dict().Total}}: <span class="text-amber-200 text-lg">{{ totalForm() }}</span></span
+                  >
+                </div>
+
+                <!-- Right side: Actions -->
+                <div class="flex gap-3">
+                  <button
+                    (click)="clearForm()"
+                    class="cursor-pointer p-5 bg-red-500/60 border border-red-500 hover:bg-red-500 rounded-lg transition-all"
+                  >
+                    {{dict().Clear}}
+                  </button>
+                  <button
+                    (click)="prPreviewToggle()"
+                    class="cursor-pointer px-5 py-2 bg-blue-600/20 hover:bg-blue-600 border border-blue-500/50 rounded-lg transition-all"
+                  >
+                    {{dict().Print}}
+                  </button>
+
+                  <button
+                    [disabled]="bonusForm.invalid"
+                    (click)="saveForm()"
+                    class="cursor-pointer px-5 py-2 bg-emerald-600/20 hover:bg-emerald-600 border border-emerald-500/50 disabled:opacity-30 disabled:cursor-not-allowed rounded-lg transition-all"
+                  >
+                    {{dict().Save}}
+                  </button>
+                </div>
+              </div>
+            </td>
+          </tr>
+        </tfoot>
+      </table>
+    </div>
+  </main>
+</section>

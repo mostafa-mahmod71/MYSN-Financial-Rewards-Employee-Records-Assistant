@@ -1,0 +1,106 @@
+<div class="stars-container">
+    <div id="stars"></div>
+    <div id="stars2"></div>
+    <div id="stars3"></div>
+</div>
+
+<section class="relative z-10 md:my-20">
+    </section>
+    
+<section class="md:my-20 ">
+    <div class="container mx-auto md:flex items-center gap-x-2 text-white rounded-lg">
+        <div class="w-full md:w-5/12 bg-white/10 backdrop-blur-xl border border-white/20 rounded-2xl p-8 shadow-2xl">
+            <h2 class="text-2xl text-center">
+            {{dict().Title}}
+        <i class="fa-solid fa-arrow-right-to-bracket"></i></h2>
+
+        @if (loginForm.get('name')?.invalid &&loginForm.get('name')?.touched ) {
+        <div class="my-5 flex items-center p-4 text-red-100 bg-red-500/20 border border-red-500/50 rounded-xl backdrop-blur-md animate-pulse">
+        <i class="fa-solid fa-circle-exclamation me-3 text-red-400"></i>
+        <div class="text-sm font-medium">
+            <p>{{dict().Val_name}}</p>
+        </div>
+    </div>
+}@else if (loginForm.get('pass')?.invalid &&loginForm.get('pass')?.touched ) {
+        <div class="my-5 flex items-center p-4 text-red-100 bg-red-500/20 border border-red-500/50 rounded-xl backdrop-blur-md animate-pulse">
+        <i class="fa-solid fa-circle-exclamation me-3 text-red-400"></i>
+        <div class="text-sm font-medium">
+            @if(loginForm.get('pass')?.errors?.['required']){
+                <p>{{dict().Val_Pass}}</p>
+            }@else {
+                <p>{{dict().Val_Pass2}}</p>
+
+            }
+        </div>
+    </div>
+}
+    <form [formGroup]="loginForm" (ngSubmit)="login()" >
+
+            
+        <div class="relative my-10 group">
+            <input
+            formControlName="name"
+            type="text" id="userName" 
+                class="block px-4 pb-2.5 pt-4 w-full text-lg text-white bg-white/5 rounded-xl border border-white/20 focus:border-blue-400 focus:outline-none focus:ring-0 peer" 
+                placeholder=" " />
+            
+            <label for="userName" 
+                class="absolute text-lg text-white/50 duration-300 transform -translate-y-4 scale-75 top-2.5 z-10 origin-[0] px-2
+                peer-placeholder-shown:scale-100 peer-placeholder-shown:-translate-y-1/2 peer-placeholder-shown:top-1/2 
+                peer-focus:top-0 peer-focus:scale-75 peer-focus:-translate-y-7 peer-focus:text-blue-400 start-3 cursor-text">
+                <i class="me-2 fa-solid fa-user-tie"></i>
+                {{dict().User_name}}
+            </label>
+        </div>
+
+        <div class="relative my-10 group">
+            <input
+            formControlName="pass"
+             type="password" id="password" 
+                class="block px-4 pb-2.5 pt-4 w-full text-lg text-white bg-white/5 rounded-xl border border-white/20 focus:border-blue-400 focus:outline-none focus:ring-0 peer" 
+                placeholder=" " />
+            
+            <label for="password" 
+                class="absolute text-lg text-white/50 duration-300 transform -translate-y-4 scale-75 top-2.5 z-10 origin-[0] px-2
+                peer-placeholder-shown:scale-100 peer-placeholder-shown:-translate-y-1/2 peer-placeholder-shown:top-1/2 
+                peer-focus:top-0 peer-focus:scale-75 peer-focus:-translate-y-7 peer-focus:text-blue-400 start-3 cursor-text">
+                <i class="me-2 fa-solid fa-key"></i>
+                {{dict().User_pass}}
+            </label>
+        </div>
+
+        <button
+        type="submit"
+        
+        class="w-full cursor-pointer py-3 text-lg font-bold rounded-xl bg-blue-600 hover:bg-blue-500 text-white transition-all shadow-lg shadow-blue-500/20">
+            {{dict().Confirm}}
+        </button>
+
+            @if(logError()){
+                        <div class="my-5 flex items-center p-4 text-red-100 bg-red-500/20 border border-red-500/50 rounded-xl backdrop-blur-md animate-pulse">
+        <i class="fa-solid fa-circle-exclamation me-3 text-red-400"></i>
+        <div class="text-sm font-medium">
+           {{logError()}} 
+        </div>
+        </div>
+            }
+
+
+    </form>
+</div>
+        <div class="w-full md:w-7/12  rounded-lg p-4 text-center">
+            <h2 class="font-bold text-3xl my-5">{{dict().Welcome}} <i class="fa-solid fa-handshake"></i> </h2>
+            <p class="text-white/70 text-lg">{{dict().Desc}}</p>
+        </div>
+
+    </div>
+</section>
+
+<footer class="fixed bottom-0 left-0 right-0 text-white border-t-2 text-center  py-4">
+    <div class="container mx-auto flex justify-around items-center  rounded-base">
+            <span> Mail : mostafamahmod5550@gmail.com</span>
+            <span>what's app: 01156271779</span>
+            <span> Developer: Mostafa Mahmod Yassen</span>
+    </div>
+
+</footer>

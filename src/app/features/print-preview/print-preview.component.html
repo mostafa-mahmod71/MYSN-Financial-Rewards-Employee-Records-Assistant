@@ -1,0 +1,51 @@
+<section class="bg-white min-h-screen p-8 font-sans">
+    <div class="container mx-auto">
+        <!-- الهامش العلوي (التاريخ والوقت) -->
+        <div class=" text-sm text-gray-500 mb-4 italic">
+            <p>Print Date: <span class=" ms-3">{{ currDate.toLocaleDateString() }}</span> </p>
+            <p>Time: <span class=" ms-3">{{ currDate.toLocaleTimeString([], {hour: '2-digit', minute:'2-digit'}) }}</span> </p>
+        </div>
+
+        <header class="text-center bg-gray-100 rounded-xl shadow">
+            <h2 class="text-3xl font-bold p-4  uppercase tracking-tight"> {{dict().Title}} </h2>
+        </header>
+
+        <main class="pt-7">
+            <!-- استخدمت border-collapse لضمان شكل احترافي في الطباعة -->
+            <table class="w-full border-collapse">
+                <thead class="font-bold text-2xl border-b-2 border-black bg-gray-200">
+                    <tr>
+                        <th class="p-2 text-center">{{dict().Num}}</th>
+                        <th class="p-2 text-center">{{dict().Code}}</th>
+                        <th class="p-2 text-center">{{dict().Name}}</th>
+                        <th class="p-2 text-center">{{dict().Value}}</th>
+                    </tr>
+                </thead>
+                <tbody class="text-xl">
+                    @for (emp of empsForm; track $index) {
+                        @if(emp.code){
+                            <tr class="border-b border-gray-200">
+                                <td class="p-1 text-center">{{$index +1}}</td>
+                                <td class="p-1 text-center font-mono">{{emp.code}}</td>
+                                <td class="p-1 text-center">{{emp.name}}</td>
+                                <td class="p-1 text-center font-semibold">{{emp.value | number:'1.2-2'}}</td>
+                            </tr>
+                        }
+
+                    }
+                </tbody>
+                <!-- الـ tfoot بتنسيق بارز -->
+                <tfoot class="border-t-4 border-black text-2xl font-bold">
+                    <tr>
+                        <td colspan="3" class="p-4 text-center uppercase tracking-widest shadow-lg">
+                            {{dict().Total}}
+                        </td>
+                        <td class="p-4 text-center text-3xl shadow-lg">
+                            {{bonusForm.total | number:'1.2-2'}}
+                        </td>
+                    </tr>
+                </tfoot>
+            </table>
+        </main>
+    </div>
+</section>

@@ -1,0 +1,25 @@
+@media print {
+    @page {
+        size: A4 portrait; 
+        margin: 15mm;    
+    }
+
+    section {
+        background-color: white !important;
+        color: black !important;
+        height: auto !important;
+        padding: 0 !important;
+    }
+
+    .no-print {
+        display: none;
+    }
+}
+
+table {
+    page-break-inside: auto;
+}
+tr {
+    page-break-inside: avoid;
+    page-break-after: auto;
+}
