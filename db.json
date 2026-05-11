@@ -591,6 +591,1428 @@
         "totalNet": 25361.43
       },
       "id": 5
+    },
+    {
+      "formDescription": "مكافاة مستقلة نظير الجهود غير العاديه ش مالية",
+      "formType": "mixed",
+      "formMonth": "5",
+      "formYear": "2026",
+      "emps": [
+        {
+          "id": "101010",
+          "code": "101010",
+          "name": "محمد احمد عبدالعليم",
+          "value": "5000",
+          "inshType": "underAge",
+          "inshBox": 16700,
+          "taxType": "auto",
+          "taxBox": 24713,
+          "taxPerc": "",
+          "comInsurance": {
+            "total": 310.25,
+            "oldAge_12": 204,
+            "workInjury_1.25": 21.25,
+            "health_3": 51,
+            "unemployment_1": 17,
+            "bonus_1": 17
+          },
+          "empInsurance": {
+            "total": 187,
+            "oldAge_9": 153,
+            "unemployment_1": 17,
+            "bonus_1": 17
+          },
+          "dues": 5310.25,
+          "taxes": 1082.92,
+          "warMartyrs": 2.41,
+          "deducted": 1582.58,
+          "net": 3727.67
+        },
+        {
+          "id": "202020",
+          "code": "202020",
+          "name": "ابراهيم علي محمد",
+          "value": "5000",
+          "inshType": "underAge",
+          "inshBox": 15000,
+          "taxType": "auto",
+          "taxBox": 13350,
+          "taxPerc": "",
+          "comInsurance": {
+            "total": 912.5,
+            "oldAge_12": 600,
+            "workInjury_1.25": 62.5,
+            "health_3": 150,
+            "unemployment_1": 50,
+            "bonus_1": 50
+          },
+          "empInsurance": {
+            "total": 550,
+            "oldAge_9": 450,
+            "unemployment_1": 50,
+            "bonus_1": 50
+          },
+          "dues": 5912.5,
+          "taxes": 890,
+          "warMartyrs": 2.23,
+          "deducted": 2354.73,
+          "net": 3557.77
+        },
+        {
+          "id": "303030",
+          "code": "303030",
+          "name": "ابراهيم محمد احمد",
+          "value": "5000",
+          "inshType": "underAge",
+          "inshBox": 15000,
+          "taxType": "auto",
+          "taxBox": 14350,
+          "taxPerc": "",
+          "comInsurance": {
+            "total": 912.5,
+            "oldAge_12": 600,
+            "workInjury_1.25": 62.5,
+            "health_3": 150,
+            "unemployment_1": 50,
+            "bonus_1": 50
+          },
+          "empInsurance": {
+            "total": 550,
+            "oldAge_9": 450,
+            "unemployment_1": 50,
+            "bonus_1": 50
+          },
+          "dues": 5912.5,
+          "taxes": 890,
+          "warMartyrs": 2.23,
+          "deducted": 2354.73,
+          "net": 3557.77
+        },
+        {
+          "id": "404040",
+          "code": "404040",
+          "name": "علي علي محمد",
+          "value": "5000",
+          "inshType": "underAge",
+          "inshBox": 5000,
+          "taxType": "auto",
+          "taxBox": 4450,
+          "taxPerc": "",
+          "comInsurance": {
+            "total": 912.5,
+            "oldAge_12": 600,
+            "workInjury_1.25": 62.5,
+            "health_3": 150,
+            "unemployment_1": 50,
+            "bonus_1": 50
+          },
+          "empInsurance": {
+            "total": 550,
+            "oldAge_9": 450,
+            "unemployment_1": 50,
+            "bonus_1": 50
+          },
+          "dues": 5912.5,
+          "taxes": 0,
+          "warMartyrs": 2.23,
+          "deducted": 1464.73,
+          "net": 4447.77
+        },
+        {
+          "id": "505050",
+          "code": "505050",
+          "name": "محمد احمد محمد",
+          "value": "5000",
+          "inshType": "upAge",
+          "inshBox": 10000,
+          "taxType": "auto",
+          "taxBox": 4950,
+          "taxPerc": "",
+          "comInsurance": {
+            "total": 212.5,
+            "oldAge_12": 0,
+            "workInjury_1.25": 62.5,
+            "health_3": 150,
+            "unemployment_1": 0,
+            "bonus_1": 0
+          },
+          "empInsurance": {
+            "total": 50,
+            "oldAge_9": 0,
+            "unemployment_1": 50,
+            "bonus_1": 0
+          },
+          "dues": 5212.5,
+          "taxes": 0,
+          "warMartyrs": 2.48,
+          "deducted": 264.98,
+          "net": 4947.52
+        }
+      ],
+      "total": 25000,
+      "userCreator": "mostafa",
+      "createdAt": "5/11/2026",
+      "formTotal": {
+        "totalValue": 25000,
+        "totalComInsurance": {
+          "total": 3260.25,
+          "oldAge_12": 2004,
+          "workInjury_1.25": 271.25,
+          "health_3": 651,
+          "unemployment_1": 167,
+          "bonus_1": 167
+        },
+        "totalEmpInsurance": {
+          "total": 1887,
+          "oldAge_9": 1503,
+          "unemployment_1": 217,
+          "bonus_1": 167
+        },
+        "totalDues": 28260.25,
+        "totalTaxes": 2862.92,
+        "totalWarMartyrs": 11.580000000000002,
+        "totalDeducated": 8021.75,
+        "totalNet": 20238.5
+      },
+      "id": 6
+    },
+    {
+      "formDescription": "مستقلة نظير الجهود خلال الفتره المنقضيه ",
+      "formType": "mixed",
+      "formMonth": "5",
+      "formYear": "2026",
+      "emps": [
+        {
+          "id": "101010",
+          "code": "101010",
+          "name": "محمد احمد عبدالعليم",
+          "value": "10000",
+          "inshType": "without",
+          "inshBox": 16700,
+          "taxType": "auto",
+          "taxBox": 34713,
+          "taxPerc": "",
+          "comInsurance": {
+            "oldAge_12": 0,
+            "workInjury_1.25": 0,
+            "health_3": 0,
+            "unemployment_1": 0,
+            "bonus_1": 0,
+            "total": 0
+          },
+          "empInsurance": {
+            "oldAge_9": 0,
+            "unemployment_1": 0,
+            "bonus_1": 0,
+            "total": 0
+          },
+          "dues": 10000,
+          "taxes": 2250,
+          "warMartyrs": 5,
+          "deducted": 2255,
+          "net": 7745
+        },
+        {
+          "id": "202020",
+          "code": "202020",
+          "name": "ابراهيم علي محمد",
+          "value": "10000",
+          "inshType": "without",
+          "inshBox": 15000,
+          "taxType": "auto",
+          "taxBox": 23350,
+          "taxPerc": "",
+          "comInsurance": {
+            "oldAge_12": 0,
+            "workInjury_1.25": 0,
+            "health_3": 0,
+            "unemployment_1": 0,
+            "bonus_1": 0,
+            "total": 0
+          },
+          "empInsurance": {
+            "oldAge_9": 0,
+            "unemployment_1": 0,
+            "bonus_1": 0,
+            "total": 0
+          },
+          "dues": 10000,
+          "taxes": 2125.42,
+          "warMartyrs": 5,
+          "deducted": 2130.42,
+          "net": 7869.58
+        },
+        {
+          "id": "303030",
+          "code": "303030",
+          "name": "ابراهيم محمد احمد",
+          "value": "10000",
+          "inshType": "without",
+          "inshBox": 15000,
+          "taxType": "auto",
+          "taxBox": 24350,
+          "taxPerc": "",
+          "comInsurance": {
+            "oldAge_12": 0,
+            "workInjury_1.25": 0,
+            "health_3": 0,
+            "unemployment_1": 0,
+            "bonus_1": 0,
+            "total": 0
+          },
+          "empInsurance": {
+            "oldAge_9": 0,
+            "unemployment_1": 0,
+            "bonus_1": 0,
+            "total": 0
+          },
+          "dues": 10000,
+          "taxes": 2150.42,
+          "warMartyrs": 5,
+          "deducted": 2155.42,
+          "net": 7844.58
+        },
+        {
+          "id": "404040",
+          "code": "404040",
+          "name": "علي علي محمد",
+          "value": "10000",
+          "inshType": "without",
+          "inshBox": 5000,
+          "taxType": "auto",
+          "taxBox": 14450,
+          "taxPerc": "",
+          "comInsurance": {
+            "oldAge_12": 0,
+            "workInjury_1.25": 0,
+            "health_3": 0,
+            "unemployment_1": 0,
+            "bonus_1": 0,
+            "total": 0
+          },
+          "empInsurance": {
+            "oldAge_9": 0,
+            "unemployment_1": 0,
+            "bonus_1": 0,
+            "total": 0
+          },
+          "dues": 10000,
+          "taxes": 1702.5,
+          "warMartyrs": 5,
+          "deducted": 1707.5,
+          "net": 8292.5
+        },
+        {
+          "id": "505050",
+          "code": "505050",
+          "name": "محمد احمد محمد",
+          "value": "10000",
+          "inshType": "without",
+          "inshBox": 10000,
+          "taxType": "auto",
+          "taxBox": 14950,
+          "taxPerc": "",
+          "comInsurance": {
+            "oldAge_12": 0,
+            "workInjury_1.25": 0,
+            "health_3": 0,
+            "unemployment_1": 0,
+            "bonus_1": 0,
+            "total": 0
+          },
+          "empInsurance": {
+            "oldAge_9": 0,
+            "unemployment_1": 0,
+            "bonus_1": 0,
+            "total": 0
+          },
+          "dues": 10000,
+          "taxes": 1802.5,
+          "warMartyrs": 5,
+          "deducted": 1807.5,
+          "net": 8192.5
+        },
+        {
+          "id": "606060",
+          "code": "606060",
+          "name": "محمد احمد محمد",
+          "value": "10000",
+          "inshType": "without",
+          "inshBox": 10000,
+          "taxType": "auto",
+          "taxBox": 14950,
+          "taxPerc": "",
+          "comInsurance": {
+            "oldAge_12": 0,
+            "workInjury_1.25": 0,
+            "health_3": 0,
+            "unemployment_1": 0,
+            "bonus_1": 0,
+            "total": 0
+          },
+          "empInsurance": {
+            "oldAge_9": 0,
+            "unemployment_1": 0,
+            "bonus_1": 0,
+            "total": 0
+          },
+          "dues": 10000,
+          "taxes": 1802.5,
+          "warMartyrs": 5,
+          "deducted": 1807.5,
+          "net": 8192.5
+        },
+        {
+          "id": "707070",
+          "code": "707070",
+          "name": "محمد احمد محمد",
+          "value": "10000",
+          "inshType": "without",
+          "inshBox": 10000,
+          "taxType": "auto",
+          "taxBox": 14950,
+          "taxPerc": "",
+          "comInsurance": {
+            "oldAge_12": 0,
+            "workInjury_1.25": 0,
+            "health_3": 0,
+            "unemployment_1": 0,
+            "bonus_1": 0,
+            "total": 0
+          },
+          "empInsurance": {
+            "oldAge_9": 0,
+            "unemployment_1": 0,
+            "bonus_1": 0,
+            "total": 0
+          },
+          "dues": 10000,
+          "taxes": 1802.5,
+          "warMartyrs": 5,
+          "deducted": 1807.5,
+          "net": 8192.5
+        },
+        {
+          "id": "808080",
+          "code": "808080",
+          "name": "محمد احمد محمد",
+          "value": "10000",
+          "inshType": "without",
+          "inshBox": 10000,
+          "taxType": "auto",
+          "taxBox": 14950,
+          "taxPerc": "",
+          "comInsurance": {
+            "oldAge_12": 0,
+            "workInjury_1.25": 0,
+            "health_3": 0,
+            "unemployment_1": 0,
+            "bonus_1": 0,
+            "total": 0
+          },
+          "empInsurance": {
+            "oldAge_9": 0,
+            "unemployment_1": 0,
+            "bonus_1": 0,
+            "total": 0
+          },
+          "dues": 10000,
+          "taxes": 1802.5,
+          "warMartyrs": 5,
+          "deducted": 1807.5,
+          "net": 8192.5
+        },
+        {
+          "id": "909090",
+          "code": "909090",
+          "name": "محمد احمد محمد",
+          "value": "10000",
+          "inshType": "without",
+          "inshBox": 10000,
+          "taxType": "auto",
+          "taxBox": 14950,
+          "taxPerc": "",
+          "comInsurance": {
+            "oldAge_12": 0,
+            "workInjury_1.25": 0,
+            "health_3": 0,
+            "unemployment_1": 0,
+            "bonus_1": 0,
+            "total": 0
+          },
+          "empInsurance": {
+            "oldAge_9": 0,
+            "unemployment_1": 0,
+            "bonus_1": 0,
+            "total": 0
+          },
+          "dues": 10000,
+          "taxes": 1802.5,
+          "warMartyrs": 5,
+          "deducted": 1807.5,
+          "net": 8192.5
+        },
+        {
+          "id": "10000",
+          "code": "10000",
+          "name": "محمد احمد محمد",
+          "value": "10000",
+          "inshType": "without",
+          "inshBox": 10000,
+          "taxType": "auto",
+          "taxBox": 14950,
+          "taxPerc": "",
+          "comInsurance": {
+            "oldAge_12": 0,
+            "workInjury_1.25": 0,
+            "health_3": 0,
+            "unemployment_1": 0,
+            "bonus_1": 0,
+            "total": 0
+          },
+          "empInsurance": {
+            "oldAge_9": 0,
+            "unemployment_1": 0,
+            "bonus_1": 0,
+            "total": 0
+          },
+          "dues": 10000,
+          "taxes": 1802.5,
+          "warMartyrs": 5,
+          "deducted": 1807.5,
+          "net": 8192.5
+        },
+        {
+          "id": "11000",
+          "code": "11000",
+          "name": "محمد احمد محمد",
+          "value": "10000",
+          "inshType": "without",
+          "inshBox": 10000,
+          "taxType": "auto",
+          "taxBox": 14950,
+          "taxPerc": "",
+          "comInsurance": {
+            "oldAge_12": 0,
+            "workInjury_1.25": 0,
+            "health_3": 0,
+            "unemployment_1": 0,
+            "bonus_1": 0,
+            "total": 0
+          },
+          "empInsurance": {
+            "oldAge_9": 0,
+            "unemployment_1": 0,
+            "bonus_1": 0,
+            "total": 0
+          },
+          "dues": 10000,
+          "taxes": 1802.5,
+          "warMartyrs": 5,
+          "deducted": 1807.5,
+          "net": 8192.5
+        },
+        {
+          "id": "12000",
+          "code": "12000",
+          "name": "محمد احمد محمد",
+          "value": "10000",
+          "inshType": "without",
+          "inshBox": 10000,
+          "taxType": "auto",
+          "taxBox": 14950,
+          "taxPerc": "",
+          "comInsurance": {
+            "oldAge_12": 0,
+            "workInjury_1.25": 0,
+            "health_3": 0,
+            "unemployment_1": 0,
+            "bonus_1": 0,
+            "total": 0
+          },
+          "empInsurance": {
+            "oldAge_9": 0,
+            "unemployment_1": 0,
+            "bonus_1": 0,
+            "total": 0
+          },
+          "dues": 10000,
+          "taxes": 1802.5,
+          "warMartyrs": 5,
+          "deducted": 1807.5,
+          "net": 8192.5
+        },
+        {
+          "code": "13000",
+          "value": "1000",
+          "inshType": "without",
+          "inshBox": null,
+          "taxType": "auto",
+          "taxBox": null,
+          "taxPerc": "",
+          "comInsurance": {
+            "oldAge_12": 0,
+            "workInjury_1.25": 0,
+            "health_3": 0,
+            "unemployment_1": 0,
+            "bonus_1": 0,
+            "total": 0
+          },
+          "empInsurance": {
+            "oldAge_9": 0,
+            "unemployment_1": 0,
+            "bonus_1": 0,
+            "total": 0
+          },
+          "dues": 1000,
+          "taxes": null,
+          "warMartyrs": 0.5,
+          "deducted": null,
+          "net": null
+        }
+      ],
+      "total": 121000,
+      "userCreator": "mostafa",
+      "createdAt": "5/12/2026",
+      "formTotal": {
+        "totalValue": 121000,
+        "totalComInsurance": {
+          "oldAge_12": 0,
+          "workInjury_1.25": 0,
+          "health_3": 0,
+          "unemployment_1": 0,
+          "bonus_1": 0,
+          "total": 0
+        },
+        "totalEmpInsurance": {
+          "oldAge_9": 0,
+          "unemployment_1": 0,
+          "bonus_1": 0,
+          "total": 0
+        },
+        "totalDues": 121000,
+        "totalTaxes": null,
+        "totalWarMartyrs": 60.5,
+        "totalDeducated": null,
+        "totalNet": null
+      },
+      "id": 7
+    },
+    {
+      "formDescription": "مستقلة نظير الجهود خلال الفتره المنقضيه ",
+      "formType": "mixed",
+      "formMonth": "5",
+      "formYear": "2026",
+      "emps": [
+        {
+          "id": "101010",
+          "code": "101010",
+          "name": "محمد احمد عبدالعليم",
+          "value": "10000",
+          "inshType": "without",
+          "inshBox": 16700,
+          "taxType": "auto",
+          "taxBox": 34713,
+          "taxPerc": "",
+          "comInsurance": {
+            "oldAge_12": 0,
+            "workInjury_1.25": 0,
+            "health_3": 0,
+            "unemployment_1": 0,
+            "bonus_1": 0,
+            "total": 0
+          },
+          "empInsurance": {
+            "oldAge_9": 0,
+            "unemployment_1": 0,
+            "bonus_1": 0,
+            "total": 0
+          },
+          "dues": 10000,
+          "taxes": 2250,
+          "warMartyrs": 5,
+          "deducted": 2255,
+          "net": 7745
+        },
+        {
+          "id": "202020",
+          "code": "202020",
+          "name": "ابراهيم علي محمد",
+          "value": "10000",
+          "inshType": "without",
+          "inshBox": 15000,
+          "taxType": "auto",
+          "taxBox": 23350,
+          "taxPerc": "",
+          "comInsurance": {
+            "oldAge_12": 0,
+            "workInjury_1.25": 0,
+            "health_3": 0,
+            "unemployment_1": 0,
+            "bonus_1": 0,
+            "total": 0
+          },
+          "empInsurance": {
+            "oldAge_9": 0,
+            "unemployment_1": 0,
+            "bonus_1": 0,
+            "total": 0
+          },
+          "dues": 10000,
+          "taxes": 2125.42,
+          "warMartyrs": 5,
+          "deducted": 2130.42,
+          "net": 7869.58
+        },
+        {
+          "id": "303030",
+          "code": "303030",
+          "name": "ابراهيم محمد احمد",
+          "value": "10000",
+          "inshType": "without",
+          "inshBox": 15000,
+          "taxType": "auto",
+          "taxBox": 24350,
+          "taxPerc": "",
+          "comInsurance": {
+            "oldAge_12": 0,
+            "workInjury_1.25": 0,
+            "health_3": 0,
+            "unemployment_1": 0,
+            "bonus_1": 0,
+            "total": 0
+          },
+          "empInsurance": {
+            "oldAge_9": 0,
+            "unemployment_1": 0,
+            "bonus_1": 0,
+            "total": 0
+          },
+          "dues": 10000,
+          "taxes": 2150.42,
+          "warMartyrs": 5,
+          "deducted": 2155.42,
+          "net": 7844.58
+        },
+        {
+          "id": "404040",
+          "code": "404040",
+          "name": "علي علي محمد",
+          "value": "10000",
+          "inshType": "without",
+          "inshBox": 5000,
+          "taxType": "auto",
+          "taxBox": 14450,
+          "taxPerc": "",
+          "comInsurance": {
+            "oldAge_12": 0,
+            "workInjury_1.25": 0,
+            "health_3": 0,
+            "unemployment_1": 0,
+            "bonus_1": 0,
+            "total": 0
+          },
+          "empInsurance": {
+            "oldAge_9": 0,
+            "unemployment_1": 0,
+            "bonus_1": 0,
+            "total": 0
+          },
+          "dues": 10000,
+          "taxes": 1702.5,
+          "warMartyrs": 5,
+          "deducted": 1707.5,
+          "net": 8292.5
+        },
+        {
+          "id": "505050",
+          "code": "505050",
+          "name": "محمد احمد محمد",
+          "value": "10000",
+          "inshType": "without",
+          "inshBox": 10000,
+          "taxType": "auto",
+          "taxBox": 14950,
+          "taxPerc": "",
+          "comInsurance": {
+            "oldAge_12": 0,
+            "workInjury_1.25": 0,
+            "health_3": 0,
+            "unemployment_1": 0,
+            "bonus_1": 0,
+            "total": 0
+          },
+          "empInsurance": {
+            "oldAge_9": 0,
+            "unemployment_1": 0,
+            "bonus_1": 0,
+            "total": 0
+          },
+          "dues": 10000,
+          "taxes": 1802.5,
+          "warMartyrs": 5,
+          "deducted": 1807.5,
+          "net": 8192.5
+        },
+        {
+          "id": "606060",
+          "code": "606060",
+          "name": "محمد احمد محمد",
+          "value": "10000",
+          "inshType": "without",
+          "inshBox": 10000,
+          "taxType": "auto",
+          "taxBox": 14950,
+          "taxPerc": "",
+          "comInsurance": {
+            "oldAge_12": 0,
+            "workInjury_1.25": 0,
+            "health_3": 0,
+            "unemployment_1": 0,
+            "bonus_1": 0,
+            "total": 0
+          },
+          "empInsurance": {
+            "oldAge_9": 0,
+            "unemployment_1": 0,
+            "bonus_1": 0,
+            "total": 0
+          },
+          "dues": 10000,
+          "taxes": 1802.5,
+          "warMartyrs": 5,
+          "deducted": 1807.5,
+          "net": 8192.5
+        },
+        {
+          "id": "707070",
+          "code": "707070",
+          "name": "محمد احمد محمد",
+          "value": "10000",
+          "inshType": "without",
+          "inshBox": 10000,
+          "taxType": "auto",
+          "taxBox": 14950,
+          "taxPerc": "",
+          "comInsurance": {
+            "oldAge_12": 0,
+            "workInjury_1.25": 0,
+            "health_3": 0,
+            "unemployment_1": 0,
+            "bonus_1": 0,
+            "total": 0
+          },
+          "empInsurance": {
+            "oldAge_9": 0,
+            "unemployment_1": 0,
+            "bonus_1": 0,
+            "total": 0
+          },
+          "dues": 10000,
+          "taxes": 1802.5,
+          "warMartyrs": 5,
+          "deducted": 1807.5,
+          "net": 8192.5
+        },
+        {
+          "id": "808080",
+          "code": "808080",
+          "name": "محمد احمد محمد",
+          "value": "10000",
+          "inshType": "without",
+          "inshBox": 10000,
+          "taxType": "auto",
+          "taxBox": 14950,
+          "taxPerc": "",
+          "comInsurance": {
+            "oldAge_12": 0,
+            "workInjury_1.25": 0,
+            "health_3": 0,
+            "unemployment_1": 0,
+            "bonus_1": 0,
+            "total": 0
+          },
+          "empInsurance": {
+            "oldAge_9": 0,
+            "unemployment_1": 0,
+            "bonus_1": 0,
+            "total": 0
+          },
+          "dues": 10000,
+          "taxes": 1802.5,
+          "warMartyrs": 5,
+          "deducted": 1807.5,
+          "net": 8192.5
+        },
+        {
+          "id": "909090",
+          "code": "909090",
+          "name": "محمد احمد محمد",
+          "value": "10000",
+          "inshType": "without",
+          "inshBox": 10000,
+          "taxType": "auto",
+          "taxBox": 14950,
+          "taxPerc": "",
+          "comInsurance": {
+            "oldAge_12": 0,
+            "workInjury_1.25": 0,
+            "health_3": 0,
+            "unemployment_1": 0,
+            "bonus_1": 0,
+            "total": 0
+          },
+          "empInsurance": {
+            "oldAge_9": 0,
+            "unemployment_1": 0,
+            "bonus_1": 0,
+            "total": 0
+          },
+          "dues": 10000,
+          "taxes": 1802.5,
+          "warMartyrs": 5,
+          "deducted": 1807.5,
+          "net": 8192.5
+        },
+        {
+          "id": "10000",
+          "code": "10000",
+          "name": "محمد احمد محمد",
+          "value": "10000",
+          "inshType": "without",
+          "inshBox": 10000,
+          "taxType": "auto",
+          "taxBox": 14950,
+          "taxPerc": "",
+          "comInsurance": {
+            "oldAge_12": 0,
+            "workInjury_1.25": 0,
+            "health_3": 0,
+            "unemployment_1": 0,
+            "bonus_1": 0,
+            "total": 0
+          },
+          "empInsurance": {
+            "oldAge_9": 0,
+            "unemployment_1": 0,
+            "bonus_1": 0,
+            "total": 0
+          },
+          "dues": 10000,
+          "taxes": 1802.5,
+          "warMartyrs": 5,
+          "deducted": 1807.5,
+          "net": 8192.5
+        },
+        {
+          "id": "11000",
+          "code": "11000",
+          "name": "محمد احمد محمد",
+          "value": "10000",
+          "inshType": "without",
+          "inshBox": 10000,
+          "taxType": "auto",
+          "taxBox": 14950,
+          "taxPerc": "",
+          "comInsurance": {
+            "oldAge_12": 0,
+            "workInjury_1.25": 0,
+            "health_3": 0,
+            "unemployment_1": 0,
+            "bonus_1": 0,
+            "total": 0
+          },
+          "empInsurance": {
+            "oldAge_9": 0,
+            "unemployment_1": 0,
+            "bonus_1": 0,
+            "total": 0
+          },
+          "dues": 10000,
+          "taxes": 1802.5,
+          "warMartyrs": 5,
+          "deducted": 1807.5,
+          "net": 8192.5
+        },
+        {
+          "id": "12000",
+          "code": "12000",
+          "name": "محمد احمد محمد",
+          "value": "10000",
+          "inshType": "without",
+          "inshBox": 10000,
+          "taxType": "auto",
+          "taxBox": 14950,
+          "taxPerc": "",
+          "comInsurance": {
+            "oldAge_12": 0,
+            "workInjury_1.25": 0,
+            "health_3": 0,
+            "unemployment_1": 0,
+            "bonus_1": 0,
+            "total": 0
+          },
+          "empInsurance": {
+            "oldAge_9": 0,
+            "unemployment_1": 0,
+            "bonus_1": 0,
+            "total": 0
+          },
+          "dues": 10000,
+          "taxes": 1802.5,
+          "warMartyrs": 5,
+          "deducted": 1807.5,
+          "net": 8192.5
+        },
+        {
+          "code": "13000",
+          "value": "1000",
+          "inshType": "without",
+          "inshBox": null,
+          "taxType": "auto",
+          "taxBox": null,
+          "taxPerc": "",
+          "comInsurance": {
+            "oldAge_12": 0,
+            "workInjury_1.25": 0,
+            "health_3": 0,
+            "unemployment_1": 0,
+            "bonus_1": 0,
+            "total": 0
+          },
+          "empInsurance": {
+            "oldAge_9": 0,
+            "unemployment_1": 0,
+            "bonus_1": 0,
+            "total": 0
+          },
+          "dues": 1000,
+          "taxes": null,
+          "warMartyrs": 0.5,
+          "deducted": null,
+          "net": null
+        }
+      ],
+      "total": 121000,
+      "userCreator": "mostafa",
+      "createdAt": "5/12/2026",
+      "formTotal": {
+        "totalValue": 121000,
+        "totalComInsurance": {
+          "oldAge_12": 0,
+          "workInjury_1.25": 0,
+          "health_3": 0,
+          "unemployment_1": 0,
+          "bonus_1": 0,
+          "total": 0
+        },
+        "totalEmpInsurance": {
+          "oldAge_9": 0,
+          "unemployment_1": 0,
+          "bonus_1": 0,
+          "total": 0
+        },
+        "totalDues": 121000,
+        "totalTaxes": null,
+        "totalWarMartyrs": 60.5,
+        "totalDeducated": null,
+        "totalNet": null
+      },
+      "id": 8
+    },
+    {
+      "formDescription": "مستقلة نظير الجهود خلال الفتره المنقضيه ",
+      "formType": "mixed",
+      "formMonth": "5",
+      "formYear": "2026",
+      "emps": [
+        {
+          "id": "101010",
+          "code": "101010",
+          "name": "محمد احمد عبدالعليم",
+          "value": "10000",
+          "inshType": "without",
+          "inshBox": 16700,
+          "taxType": "auto",
+          "taxBox": 34713,
+          "taxPerc": "",
+          "comInsurance": {
+            "oldAge_12": 0,
+            "workInjury_1.25": 0,
+            "health_3": 0,
+            "unemployment_1": 0,
+            "bonus_1": 0,
+            "total": 0
+          },
+          "empInsurance": {
+            "oldAge_9": 0,
+            "unemployment_1": 0,
+            "bonus_1": 0,
+            "total": 0
+          },
+          "dues": 10000,
+          "taxes": 2250,
+          "warMartyrs": 5,
+          "deducted": 2255,
+          "net": 7745
+        },
+        {
+          "id": "202020",
+          "code": "202020",
+          "name": "ابراهيم علي محمد",
+          "value": "10000",
+          "inshType": "without",
+          "inshBox": 15000,
+          "taxType": "auto",
+          "taxBox": 23350,
+          "taxPerc": "",
+          "comInsurance": {
+            "oldAge_12": 0,
+            "workInjury_1.25": 0,
+            "health_3": 0,
+            "unemployment_1": 0,
+            "bonus_1": 0,
+            "total": 0
+          },
+          "empInsurance": {
+            "oldAge_9": 0,
+            "unemployment_1": 0,
+            "bonus_1": 0,
+            "total": 0
+          },
+          "dues": 10000,
+          "taxes": 2125.42,
+          "warMartyrs": 5,
+          "deducted": 2130.42,
+          "net": 7869.58
+        },
+        {
+          "id": "303030",
+          "code": "303030",
+          "name": "ابراهيم محمد احمد",
+          "value": "10000",
+          "inshType": "without",
+          "inshBox": 15000,
+          "taxType": "auto",
+          "taxBox": 24350,
+          "taxPerc": "",
+          "comInsurance": {
+            "oldAge_12": 0,
+            "workInjury_1.25": 0,
+            "health_3": 0,
+            "unemployment_1": 0,
+            "bonus_1": 0,
+            "total": 0
+          },
+          "empInsurance": {
+            "oldAge_9": 0,
+            "unemployment_1": 0,
+            "bonus_1": 0,
+            "total": 0
+          },
+          "dues": 10000,
+          "taxes": 2150.42,
+          "warMartyrs": 5,
+          "deducted": 2155.42,
+          "net": 7844.58
+        },
+        {
+          "id": "404040",
+          "code": "404040",
+          "name": "علي علي محمد",
+          "value": "10000",
+          "inshType": "without",
+          "inshBox": 5000,
+          "taxType": "auto",
+          "taxBox": 14450,
+          "taxPerc": "",
+          "comInsurance": {
+            "oldAge_12": 0,
+            "workInjury_1.25": 0,
+            "health_3": 0,
+            "unemployment_1": 0,
+            "bonus_1": 0,
+            "total": 0
+          },
+          "empInsurance": {
+            "oldAge_9": 0,
+            "unemployment_1": 0,
+            "bonus_1": 0,
+            "total": 0
+          },
+          "dues": 10000,
+          "taxes": 1702.5,
+          "warMartyrs": 5,
+          "deducted": 1707.5,
+          "net": 8292.5
+        },
+        {
+          "id": "505050",
+          "code": "505050",
+          "name": "محمد احمد محمد",
+          "value": "10000",
+          "inshType": "without",
+          "inshBox": 10000,
+          "taxType": "auto",
+          "taxBox": 14950,
+          "taxPerc": "",
+          "comInsurance": {
+            "oldAge_12": 0,
+            "workInjury_1.25": 0,
+            "health_3": 0,
+            "unemployment_1": 0,
+            "bonus_1": 0,
+            "total": 0
+          },
+          "empInsurance": {
+            "oldAge_9": 0,
+            "unemployment_1": 0,
+            "bonus_1": 0,
+            "total": 0
+          },
+          "dues": 10000,
+          "taxes": 1802.5,
+          "warMartyrs": 5,
+          "deducted": 1807.5,
+          "net": 8192.5
+        },
+        {
+          "id": "606060",
+          "code": "606060",
+          "name": "محمد احمد محمد",
+          "value": "10000",
+          "inshType": "without",
+          "inshBox": 10000,
+          "taxType": "auto",
+          "taxBox": 14950,
+          "taxPerc": "",
+          "comInsurance": {
+            "oldAge_12": 0,
+            "workInjury_1.25": 0,
+            "health_3": 0,
+            "unemployment_1": 0,
+            "bonus_1": 0,
+            "total": 0
+          },
+          "empInsurance": {
+            "oldAge_9": 0,
+            "unemployment_1": 0,
+            "bonus_1": 0,
+            "total": 0
+          },
+          "dues": 10000,
+          "taxes": 1802.5,
+          "warMartyrs": 5,
+          "deducted": 1807.5,
+          "net": 8192.5
+        },
+        {
+          "id": "707070",
+          "code": "707070",
+          "name": "محمد احمد محمد",
+          "value": "10000",
+          "inshType": "without",
+          "inshBox": 10000,
+          "taxType": "auto",
+          "taxBox": 14950,
+          "taxPerc": "",
+          "comInsurance": {
+            "oldAge_12": 0,
+            "workInjury_1.25": 0,
+            "health_3": 0,
+            "unemployment_1": 0,
+            "bonus_1": 0,
+            "total": 0
+          },
+          "empInsurance": {
+            "oldAge_9": 0,
+            "unemployment_1": 0,
+            "bonus_1": 0,
+            "total": 0
+          },
+          "dues": 10000,
+          "taxes": 1802.5,
+          "warMartyrs": 5,
+          "deducted": 1807.5,
+          "net": 8192.5
+        },
+        {
+          "id": "808080",
+          "code": "808080",
+          "name": "محمد احمد محمد",
+          "value": "10000",
+          "inshType": "without",
+          "inshBox": 10000,
+          "taxType": "auto",
+          "taxBox": 14950,
+          "taxPerc": "",
+          "comInsurance": {
+            "oldAge_12": 0,
+            "workInjury_1.25": 0,
+            "health_3": 0,
+            "unemployment_1": 0,
+            "bonus_1": 0,
+            "total": 0
+          },
+          "empInsurance": {
+            "oldAge_9": 0,
+            "unemployment_1": 0,
+            "bonus_1": 0,
+            "total": 0
+          },
+          "dues": 10000,
+          "taxes": 1802.5,
+          "warMartyrs": 5,
+          "deducted": 1807.5,
+          "net": 8192.5
+        },
+        {
+          "id": "909090",
+          "code": "909090",
+          "name": "محمد احمد محمد",
+          "value": "10000",
+          "inshType": "without",
+          "inshBox": 10000,
+          "taxType": "auto",
+          "taxBox": 14950,
+          "taxPerc": "",
+          "comInsurance": {
+            "oldAge_12": 0,
+            "workInjury_1.25": 0,
+            "health_3": 0,
+            "unemployment_1": 0,
+            "bonus_1": 0,
+            "total": 0
+          },
+          "empInsurance": {
+            "oldAge_9": 0,
+            "unemployment_1": 0,
+            "bonus_1": 0,
+            "total": 0
+          },
+          "dues": 10000,
+          "taxes": 1802.5,
+          "warMartyrs": 5,
+          "deducted": 1807.5,
+          "net": 8192.5
+        },
+        {
+          "id": "10000",
+          "code": "10000",
+          "name": "محمد احمد محمد",
+          "value": "10000",
+          "inshType": "without",
+          "inshBox": 10000,
+          "taxType": "auto",
+          "taxBox": 14950,
+          "taxPerc": "",
+          "comInsurance": {
+            "oldAge_12": 0,
+            "workInjury_1.25": 0,
+            "health_3": 0,
+            "unemployment_1": 0,
+            "bonus_1": 0,
+            "total": 0
+          },
+          "empInsurance": {
+            "oldAge_9": 0,
+            "unemployment_1": 0,
+            "bonus_1": 0,
+            "total": 0
+          },
+          "dues": 10000,
+          "taxes": 1802.5,
+          "warMartyrs": 5,
+          "deducted": 1807.5,
+          "net": 8192.5
+        },
+        {
+          "id": "11000",
+          "code": "11000",
+          "name": "محمد احمد محمد",
+          "value": "10000",
+          "inshType": "without",
+          "inshBox": 10000,
+          "taxType": "auto",
+          "taxBox": 14950,
+          "taxPerc": "",
+          "comInsurance": {
+            "oldAge_12": 0,
+            "workInjury_1.25": 0,
+            "health_3": 0,
+            "unemployment_1": 0,
+            "bonus_1": 0,
+            "total": 0
+          },
+          "empInsurance": {
+            "oldAge_9": 0,
+            "unemployment_1": 0,
+            "bonus_1": 0,
+            "total": 0
+          },
+          "dues": 10000,
+          "taxes": 1802.5,
+          "warMartyrs": 5,
+          "deducted": 1807.5,
+          "net": 8192.5
+        },
+        {
+          "id": "12000",
+          "code": "12000",
+          "name": "محمد احمد محمد",
+          "value": "10000",
+          "inshType": "without",
+          "inshBox": 10000,
+          "taxType": "auto",
+          "taxBox": 14950,
+          "taxPerc": "",
+          "comInsurance": {
+            "oldAge_12": 0,
+            "workInjury_1.25": 0,
+            "health_3": 0,
+            "unemployment_1": 0,
+            "bonus_1": 0,
+            "total": 0
+          },
+          "empInsurance": {
+            "oldAge_9": 0,
+            "unemployment_1": 0,
+            "bonus_1": 0,
+            "total": 0
+          },
+          "dues": 10000,
+          "taxes": 1802.5,
+          "warMartyrs": 5,
+          "deducted": 1807.5,
+          "net": 8192.5
+        }
+      ],
+      "total": 120000,
+      "userCreator": "mostafa",
+      "createdAt": "5/12/2026",
+      "formTotal": {
+        "totalValue": 120000,
+        "totalComInsurance": {
+          "oldAge_12": 0,
+          "workInjury_1.25": 0,
+          "health_3": 0,
+          "unemployment_1": 0,
+          "bonus_1": 0,
+          "total": 0
+        },
+        "totalEmpInsurance": {
+          "oldAge_9": 0,
+          "unemployment_1": 0,
+          "bonus_1": 0,
+          "total": 0
+        },
+        "totalDues": 120000,
+        "totalTaxes": 22648.34,
+        "totalWarMartyrs": 60,
+        "totalDeducated": 22708.34,
+        "totalNet": 97291.66
+      },
+      "id": 9
     }
   ],
   "empsearch": [
@@ -600,8 +2022,8 @@
       "name": "محمد احمد عبدالعليم",
       "dept": "ادارة المبيعات",
       "job": "محاسب",
-      "taxBox": 19900,
-      "inshBox": 15000
+      "taxBox": 34713,
+      "inshBox": 16700
     },
     {
       "id": "202020",
@@ -609,8 +2031,8 @@
       "name": "ابراهيم علي محمد",
       "dept": "ادارة التصميم",
       "job": "مصمم جرافيك",
-      "taxBox": 8900,
-      "inshBox": 10000
+      "taxBox": 23350,
+      "inshBox": 15000
     },
     {
       "id": "303030",
@@ -618,8 +2040,8 @@
       "name": "ابراهيم محمد احمد",
       "dept": "ادارة التصميم",
       "job": "مصمم جرافيك",
-      "taxBox": 9900,
-      "inshBox": 10000
+      "taxBox": 24350,
+      "inshBox": 15000
     },
     {
       "id": "404040",
@@ -627,8 +2049,8 @@
       "name": "علي علي محمد",
       "dept": "ادارة التصميم",
       "job": "مصمم جرافيك",
-      "taxBox": 0,
-      "inshBox": 0
+      "taxBox": 14450,
+      "inshBox": 5000
     },
     {
       "id": "505050",
@@ -636,8 +2058,71 @@
       "name": "محمد احمد محمد",
       "dept": "ادارة التصميم",
       "job": "مصمم جرافيك",
-      "taxBox": 0,
-      "inshBox": 0
+      "taxBox": 14950,
+      "inshBox": 10000
+    },
+    {
+      "id": "606060",
+      "code": "606060",
+      "name": "محمد احمد محمد",
+      "dept": "ادارة التصميم",
+      "job": "مصمم جرافيك",
+      "taxBox": 14950,
+      "inshBox": 10000
+    },
+    {
+      "id": "707070",
+      "code": "707070",
+      "name": "محمد احمد محمد",
+      "dept": "ادارة التصميم",
+      "job": "مصمم جرافيك",
+      "taxBox": 14950,
+      "inshBox": 10000
+    },
+    {
+      "id": "808080",
+      "code": "808080",
+      "name": "محمد احمد محمد",
+      "dept": "ادارة التصميم",
+      "job": "مصمم جرافيك",
+      "taxBox": 14950,
+      "inshBox": 10000
+    },
+    {
+      "id": "909090",
+      "code": "909090",
+      "name": "محمد احمد محمد",
+      "dept": "ادارة التصميم",
+      "job": "مصمم جرافيك",
+      "taxBox": 14950,
+      "inshBox": 10000
+    },
+    {
+      "id": "10000",
+      "code": "10000",
+      "name": "محمد احمد محمد",
+      "dept": "ادارة التصميم",
+      "job": "مصمم جرافيك",
+      "taxBox": 14950,
+      "inshBox": 10000
+    },
+    {
+      "id": "11000",
+      "code": "11000",
+      "name": "محمد احمد محمد",
+      "dept": "ادارة التصميم",
+      "job": "مصمم جرافيك",
+      "taxBox": 14950,
+      "inshBox": 10000
+    },
+    {
+      "id": "12000",
+      "code": "12000",
+      "name": "محمد احمد محمد",
+      "dept": "ادارة التصميم",
+      "job": "مصمم جرافيك",
+      "taxBox": 14950,
+      "inshBox": 10000
     }
   ]
 }

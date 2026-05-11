@@ -1,4 +1,4 @@
-<form [formGroup]="filterForm" (submit)="getForms()" class="container mx-auto my-20 p-4 text-white" >
+<div  class="container mx-auto my-20 p-4 text-white" >
   <!-- هيدر الصفحة -->
   <div class="mb-8 border-r-4 border-cyan-500 pr-4">
     <h1 class="text-3xl font-bold">مركز التقارير والاستعلامات</h1>
@@ -6,7 +6,7 @@
   </div>
 
   <!-- منطقة الفلاتر -->  
-  <div class="text-center grid grid-cols-1 md:grid-cols-4 gap-4 p-6 bg-white/5 rounded-2xl border border-white/10 backdrop-blur-md mb-8">
+  <form [formGroup]="filterForm" (submit)="getForms()"  class="text-center grid grid-cols-1 md:grid-cols-4 gap-4 p-6 bg-white/5 rounded-2xl border border-white/10 backdrop-blur-md mb-8">
     
     <!-- نوع الاستمارة -->
     <div class="flex flex-col gap-2">
@@ -51,7 +51,7 @@
         بحث
       </button>
     </div>
-  </div>
+  </form>
 
   <!-- جدول عرض النتائج -->
   <div class="overflow-x-auto custom-scrollbar bg-white/5 rounded-2xl border border-white/10">
@@ -67,41 +67,41 @@
         </tr>
       </thead>
       <tbody>
-        @if(currForms()){
+        @if(currForms().length >0 ){
+          <!--   الاستمارات -->
           @for (form of currForms(); track form.id) {
-                    <!-- مثال لسطر استمارة -->
         <tr class="border-b border-white/5 hover:bg-white/5 transition-colors group">
           <td class="p-4 font-mono">{{form.id}}</td>
           <td class="p-4 font-bold text-white/90">{{form.formDescription}}</td>
           <td class="p-4 opacity-70">{{form.createdAt}}</td>
           <td class="p-4 opacity-70">{{form.userCreator}}</td>
           <td class="p-4 opacity-70">
-                <select class="bg-slate-900 border border-white/20 rounded-xl p-3 outline-none focus:border-cyan-500">
+                <select #type class="bg-slate-900 border border-white/20 rounded-xl p-3 outline-none focus:border-cyan-500">
                     <option value="colecForm">كشف تجميعي</option>
                     <option value="empsForm">استمارة صرف</option>
                     <option value="colecInsh">كشف تجميعي معاشات </option>
                     <option value="Journal"> اذن قيد </option>
                 </select>    
           </td>
-          <td class="p-4 flex justify-center gap-2">
+          <td  class="p-4 flex justify-center gap-2">
             <!-- الزرار اللي هيفتح المنيو اللي قولت عليها -->
-            <button class="bg-white/10 cursor-pointer hover:bg-white/20 px-2 py-2 rounded-lg text-sm flex items-center  border border-white/10">
+            <button (click)="print(form.id , type.value)" class="bg-white/10 cursor-pointer hover:bg-white/20 px-2 py-2 rounded-lg text-sm flex items-center  border border-white/10">
               <i class="me-2 fa-solid fa-print"></i>
              الطباعة
             </button>
           </td>
         </tr>
 
-          }@empty {
+          }
+        }@else {
             <tr>
               <td colspan="6" class="p-10 text-center text-white/40">
                 لا توجد استمارات مطابقة للبحث حالياً
               </td>
             </tr>
           }
-        }
         
       </tbody>
     </table>
   </div>
-</form>
+</div>

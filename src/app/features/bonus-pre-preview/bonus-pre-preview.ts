@@ -6,8 +6,8 @@ import { LanguageService } from '../../core/services/language.service';
 @Component({
   selector: 'app-print-preview',
   imports: [CommonModule],
-  templateUrl: './print-preview.component.html',
-  styleUrl: './print-preview.component.css',
+  templateUrl: './bonus-pre-preview.html',
+  styleUrl: './bonus-pre-preview.css',
 })
 export class PrintPreviewComponent {
 private language = inject(LanguageService)

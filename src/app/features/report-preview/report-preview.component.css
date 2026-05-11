@@ -1,0 +1,56 @@
+.report-page {
+    width: 29.7cm !important;
+    height: 20.5cm !important; /* قللناه سنة عشان نضمن إنه يلم في صفحة واحدة */
+    margin: 0 auto; 
+    padding: 0.5cm; /* بلاش padding-inline بس عشان الموازنة */
+    background-color: white !important;
+    box-sizing: border-box;
+    overflow: hidden;
+    position: relative;
+    direction: rtl;
+}
+
+
+
+.colection  th, .colection td {
+    border: 1px solid black ;
+}
+
+.report-table th {
+    padding: 4px;
+}
+
+.report-table td p {
+    margin: 0;
+    padding-right: 5px;
+}
+
+@media print {
+    @page {
+        size: A4 landscape;
+        margin: 0 !important; /* بنلغي هوامش المتصفح الغلسة */
+    }
+
+    body {
+        margin: 0 !important;
+        padding: 0 !important;
+    }
+
+    .report-page {
+        margin: 0 !important;
+        border: none !important;
+        width: 29.7cm !important;
+        height: 21cm !important; /* في الطباعة نرجعه 21 */
+        box-shadow: none !important;
+        transform: scale(0.98); /* تريك صايعة: بنصغر العرض 2% عشان نضمن إنه ميتأكلش من الأطراف */
+    }
+}
+
+
+.arabic-numbers {
+    font-variant-numeric: tabular-nums;
+    -moz-font-feature-settings: "arab";
+    -webkit-font-feature-settings: "arab";
+    font-feature-settings: "arab";
+}
+

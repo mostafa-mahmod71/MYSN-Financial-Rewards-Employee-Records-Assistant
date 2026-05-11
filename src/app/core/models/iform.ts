@@ -13,9 +13,9 @@ interface Iform {
 
 interface FormTotal {
   totalValue: number;
-  totalComInsurance: ComInsurance[];
+  totalComInsurance: ComInsurance;
   totalDues: number;
-  totalEmpInsurance: EmpInsurance[];
+  totalEmpInsurance: EmpInsurance;
   totalTaxes: number;
   totalWarMartyrs: number;
   totalDeducated: number;
@@ -31,8 +31,8 @@ interface Emp {
   taxType: string;
   taxBox:string ;
   taxPerc: string;
-  comInsurance: ComInsurance[];
-  empInsurance: EmpInsurance[];
+  comInsurance: ComInsurance;
+  empInsurance: EmpInsurance;
   dues: number;
   taxes: number;
   warMartyrs: number;

@@ -192,6 +192,31 @@
             <td colspan="8" class="p-4">
               <div class="flex items-center justify-around text-md font-medium">
                 <!-- Left side: Stats -->
+                <div class="flex gap-3">
+                  <button
+                    [disabled]="bonusForm.invalid"
+                    (click)="saveForm()"
+                    class="cursor-pointer px-5 py-2 bg-emerald-600/20 hover:bg-emerald-600 border border-emerald-500/50 disabled:opacity-30 disabled:cursor-not-allowed rounded-lg transition-all"
+                  >
+                    {{dict().Save}}
+                  </button>
+                  <button
+                    (click)="prPreviewToggle()"
+                    class="cursor-pointer px-5 py-2 bg-blue-600/20 hover:bg-blue-600 border border-blue-500/50 rounded-lg transition-all"
+                  >
+                    {{dict().Print}}
+                  </button>
+                  <button
+                    (click)="clearForm()"
+                    class="cursor-pointer p-5 bg-red-500/60 border border-red-500 hover:bg-red-500 rounded-lg transition-all"
+                  >
+                    {{dict().Clear}}
+                  </button>
+
+
+                </div>
+
+                <!-- Right side: Actions -->
                 <div class="flex gap-8 opacity-80">
                   <span
                     >{{dict().Count}}: <span class="text-amber-200 text-lg">{{ empsArray.length }}</span></span
@@ -201,29 +226,6 @@
                   >
                 </div>
 
-                <!-- Right side: Actions -->
-                <div class="flex gap-3">
-                  <button
-                    (click)="clearForm()"
-                    class="cursor-pointer p-5 bg-red-500/60 border border-red-500 hover:bg-red-500 rounded-lg transition-all"
-                  >
-                    {{dict().Clear}}
-                  </button>
-                  <button
-                    (click)="prPreviewToggle()"
-                    class="cursor-pointer px-5 py-2 bg-blue-600/20 hover:bg-blue-600 border border-blue-500/50 rounded-lg transition-all"
-                  >
-                    {{dict().Print}}
-                  </button>
-
-                  <button
-                    [disabled]="bonusForm.invalid"
-                    (click)="saveForm()"
-                    class="cursor-pointer px-5 py-2 bg-emerald-600/20 hover:bg-emerald-600 border border-emerald-500/50 disabled:opacity-30 disabled:cursor-not-allowed rounded-lg transition-all"
-                  >
-                    {{dict().Save}}
-                  </button>
-                </div>
               </div>
             </td>
           </tr>

@@ -1,0 +1,320 @@
+<div class="report-page arabic-numbers bg-white min-h-screen p-0.5 text-slate-900" dir="rtl">
+    
+
+    <!-- هيدر  -->
+    <div class="flex  justify-between items-center border rounded p-2  ">
+        <div class="text-start">   
+            <h1 class="text-xl font-black text-slate-800 uppercase tracking-tighter">شركة الصرف الصحي للقاهرة الكبرى</h1>
+            <p class="text-sm font-bold text-slate-700">إحدى شركات الشركة القابضة لمياه الشرب والصرف الصحي</p>
+            <p class="text-sm font-bold text-slate-700">MYSN Systems</p>
+        </div>
+        
+        <div >
+            <div class="flex justify-start gap-x-5">
+            <div class="flex justify-between  border rounded">
+                <h2 class="p-1 font-bold bg-gray-200 rounded">رقم الاستمارة</h2>
+                <h2 class="p-1 font-bold">{{reportData()?.id}}</h2>
+            </div>
+            <div class="flex justify-between  border rounded">
+                <h2 class="p-1 font-bold bg-gray-200 rounded">عن شهر </h2>
+                <h2 class="p-1 font-bold">{{reportData()?.formMonth}}/{{reportData()?.formYear}}</h2>
+            </div>
+            </div>
+
+            <div class="flex justify-between  border rounded">
+                <h2 class="p-1 font-bold bg-gray-200 rounded">تقرير </h2>
+                <h2 class="p-1 font-bold max-w-70 max-h-8 overflow-y-hidden"> {{reportData()?.formDescription}}</h2>
+            </div>
+
+
+        </div>
+
+        <div class="text-left text-[11px] font-mono font-bold ">
+            <p><span class="text-gray-800">time:</span> {{ today | date:'hh:mm a' }}</p>
+            <p><span class="text-gray-800">DATE:</span> {{ today | date:'dd/MM/yyyy' }}</p>
+            <p><span class="text-gray-800">USER:</span> {{ reportData()?.userCreator }}</p>
+        </div>
+    </div>
+
+    @if(reportType() === 'colecForm' ){
+        <!-- التجميعي  -->
+
+    <!-- الجدول  -->
+    <div class="colection border-2 mt-2 border-slate-600 rounded-lg overflow-hidden">
+        @if (reportData()) {
+                    <table class="w-full text-sm">
+            <thead class="text-center">
+                <tr class="bg-gray-200 text-black  ">
+                    <th colspan="3" class="text-lg font-black">الاستحقاقـــــــــات</th>
+                    <th colspan="3" class="text-lg font-black">الاستقطاعـــــــــات</th>
+                </tr>
+                <tr class="bg-slate-100 border-b-2 border-slate-800 font-black">
+                    <th class=" w-32 p-1  ">الاجمالي</th>
+                    <th class=" w-32 p-1  ">المبلغ</th>
+                    <th class=" p-1  ">الــــــبــــيــان</th>
+                    <th class=" w-32 p-1  ">الاجمالي</th>
+                    <th class=" w-32 p-1  ">المبلغ</th>
+                    <th class=" p-1  ">الــــــبــــيــان</th>
+                </tr>
+            </thead>
+            <tbody class=" divide-slate-200">
+
+                <tr class=" align-top">
+                    <td class="p-1 text-center font-mono font-bold  ">{{  toAr(reportData()?.formTotal?.totalValue) }} </td>
+                    <td class="p-1 text-center font-mono font-bold  "></td>
+                    <td class="p-1 font-bold ">اجمالي قيمة المبلغ المستحق</td>
+                    <td class="p-1 text-center font-mono font-bold  "></td>
+                    <td class="p-1 text-center font-mono font-bold  ">{{toAr(reportData()?.formTotal?.totalComInsurance?.oldAge_12)  }} </td>
+                    <td class="p-1 font-bold ">حصة صاحب العمل 12 % شيخوخة</td>
+
+                </tr>
+                <tr class=" align-top">
+                    <!-- right  -->
+                    <td class="p-1 text-center font-mono font-bold  "></td>
+                    <td class="p-1 text-center font-mono font-bold  ">{{toAr(reportData()?.formTotal?.totalComInsurance?.oldAge_12)  }} </td>
+                    <td class="p-1 font-bold ">حصة صاحب العمل 12 % شيخوخة</td>
+                    <!-- left  -->
+                    <td class="p-1 text-center font-mono font-bold  "></td>
+                    <td class="p-1 text-center font-mono font-bold  "> {{  toAr(reportData()?.formTotal?.totalComInsurance?.health_3) }}</td>
+                    <td class="p-1 font-bold ">حصة صاحب العمل 3 % مرضي</td>
+                </tr>
+                <tr class=" align-top">
+                    <!-- right  -->
+                    <td class="p-1 text-center font-mono font-bold  "></td>
+                    <td class="p-1 text-center font-mono font-bold  ">{{toAr(reportData()?.formTotal?.totalComInsurance?.health_3)  }} </td>
+                    <td class="p-1 font-bold ">حصة صاحب العمل 3 % مرضي</td>
+                    <!-- left  -->
+                    <td class="p-1 text-center font-mono font-bold  "></td>
+                    <td class="p-1 text-center font-mono font-bold  "> {{ toAr(reportData()?.formTotal?.totalComInsurance?.['workInjury_1.25']) }}</td>
+                    <td class="p-1 font-bold ">حصة صاحب العمل 1.25 % اصابة عمل</td>
+                </tr>
+                <tr class=" align-top">
+                    <!-- right  -->
+                    <td class="p-1 text-center font-mono font-bold  "></td>
+                    <td class="p-1 text-center font-mono font-bold  ">{{toAr(reportData()?.formTotal?.totalComInsurance?.['workInjury_1.25'])  }} </td>
+                    <td class="p-1 font-bold ">حصة صاحب العمل 1.25 % اصابة عمل</td>
+                    <!-- left  -->
+                    <td class="p-1 text-center font-mono font-bold  "></td>
+                    <td class="p-1 text-center font-mono font-bold  "> {{ toAr(reportData()?.formTotal?.totalComInsurance?.unemployment_1) }}</td>
+                    <td class="p-1 font-bold ">حصة صاحب العمل 1 % بطالة</td>
+                </tr>
+                <tr class=" align-top">
+                    <!-- right  -->
+                    <td class="p-1 text-center font-mono font-bold  "></td>
+                    <td class="p-1 text-center font-mono font-bold  ">{{toAr(reportData()?.formTotal?.totalComInsurance?.unemployment_1)  }} </td>
+                    <td class="p-1 font-bold ">حصة صاحب العمل 1 % بطالة</td>
+                    <!-- left  -->
+                    <td class="p-1 text-center font-mono font-bold  "></td>
+                    <td class="p-1 text-center font-mono font-bold  "> {{ toAr(reportData()?.formTotal?.totalComInsurance?.bonus_1) }}</td>
+                    <td class="p-1 font-bold ">حصة صاحب العمل 1 % مكافاة</td>
+                </tr>
+                <tr class=" align-top">
+                    <!-- right  -->
+                    <td class="p-1 text-center font-mono font-bold  "></td>
+                    <td class="p-1 text-center font-mono font-bold  ">{{toAr(reportData()?.formTotal?.totalComInsurance?.bonus_1)  }} </td>
+                    <td class="p-1 font-bold ">حصة صاحب العمل 1 % مكافاة</td>
+                    <!-- left  -->
+                    <td class="p-1 text-center font-mono font-bold  "></td>
+                    <td class="p-1 text-center font-mono font-bold  "> {{ toAr(reportData()?.formTotal?.totalEmpInsurance?.oldAge_9) }}</td>
+                    <td class="p-1 font-bold ">حصة العامل 9 % شيخوخة</td>
+                </tr>
+                <tr class=" align-top">
+                    <!-- right  -->
+                    <td class="p-1 text-center bg-gray-100  font-mono font-bold  ">{{toAr(reportData()?.formTotal?.totalComInsurance?.total)  }}</td>
+                    <td class="p-1 text-center bg-gray-100 font-mono font-bold  "> </td>
+                    <td class="p-1 font-bold bg-gray-100 ">الاجــمــالــي </td>
+                    <!-- left  -->
+                    <td class="p-1 text-center font-mono font-bold  "></td>
+                    <td class="p-1 text-center font-mono font-bold  "> {{ toAr(reportData()?.formTotal?.totalEmpInsurance?.unemployment_1) }}</td>
+                    <td class="p-1 font-bold ">حصة العامل 1 % بطالة</td>
+                </tr>
+                <tr class=" align-top">
+                    <!-- right  -->
+                    <td class="p-1 text-center font-mono font-bold  "></td>
+                    <td class="p-1 text-center font-mono font-bold  "> </td>
+                    <td class="p-1 font-bold "></td>
+                    <!-- left  -->
+                    <td class="p-1 text-center font-mono font-bold  "></td>
+                    <td class="p-1 text-center font-mono font-bold  "> {{ toAr(reportData()?.formTotal?.totalEmpInsurance?.bonus_1) }}</td>
+                    <td class="p-1 font-bold ">حصة العامل 1 % مكافاة</td>
+                </tr>
+                <tr class=" align-top">
+                    <!-- right  -->
+                    <td class="p-1 text-center font-mono font-bold  "></td>
+                    <td class="p-1 text-center font-mono font-bold  "> </td>
+                    <td class="p-1 font-bold "></td>
+                    <!-- left  -->
+                    <td class="p-1 text-center font-mono font-bold  bg-gray-100">{{ toAr(((reportData()?.formTotal?.totalEmpInsurance?.total || 0) + (reportData()?.formTotal?.totalComInsurance?.total || 0) )) }}</td>
+                    <td class="p-1 text-center font-mono font-bold  bg-gray-100"> </td>
+                    <td class="p-1 font-bold  bg-gray-100"> الاجــمــالــي</td>
+                </tr>
+                <tr class=" align-top">
+                    <!-- right  -->
+                    <td class="p-1 text-center font-mono font-bold  "></td>
+                    <td class="p-1 text-center font-mono font-bold  "> </td>
+                    <td class="p-1 font-bold "></td>
+                    <!-- left  -->
+                    <td class="p-1 text-center font-mono font-bold  ">{{ toAr(reportData()?.formTotal?.totalWarMartyrs) }}</td>
+                    <td class="p-1 text-center font-mono font-bold  "> </td>
+                    <td class="p-1 font-bold  "> صندوق تكريم الشهداء وضحايا الحرب</td>
+                </tr>
+                <tr class=" align-top">
+                    <!-- right  -->
+                    <td class="p-1 text-center font-mono font-bold  ">{{toAr(reportData()?.formTotal?.totalDues)}}</td>
+                    <td class="p-1 text-center font-mono font-bold  "> </td>
+                    <td class="p-1 font-bold ">الاستحقاقات</td>
+                    <!-- left  -->
+                    <td class="p-1 text-center font-mono font-bold  ">{{ toAr(reportData()?.formTotal?.totalTaxes) }}</td>
+                    <td class="p-1 text-center font-mono font-bold  "> </td>
+                    <td class="p-1 font-bold  ">( كسب العمل ) الضرائب</td>
+                </tr>
+                <tr class=" align-top">
+                    <!-- right  -->
+                    <td class="p-1 text-center font-mono font-bold  ">{{ toAr(reportData()?.formTotal?.totalDeducated) }}</td>
+                    <td class="p-1 text-center font-mono font-bold  "> </td>
+                    <td class="p-1 font-bold ">الاستقطاعات</td>
+                    <!-- left  -->
+                    <td class="p-1 text-center font-mono font-bold  "></td>
+                    <td class="p-1 text-center font-mono font-bold  "> </td>
+                    <td class="p-1 font-bold  "> </td>
+                </tr>
+                <tr class=" align-top">
+                    <!-- right  -->
+                    <td class="p-1 text-center font-mono font-bold  ">{{toAr(reportData()?.formTotal?.totalNet) }}</td>
+                    <td class="p-1 text-center font-mono font-bold  "> </td>
+                    <td class="p-1 font-bold ">الصافي</td>
+                    <!-- left  -->
+                    <td class="p-1 text-center font-mono font-bold  ">{{ toAr(reportData()?.formTotal?.totalDeducated) }}</td>
+                    <td class="p-1 text-center font-mono font-bold  "> </td>
+                    <td class="p-1 font-bold  "> الاستقطاعات</td>
+                </tr>
+            </tbody>
+            <tfoot>
+
+
+            </tfoot>
+        </table>
+        }
+    </div>
+    <!-- تفقيط -->
+    <div class="flex m-4 gap-x-2">
+        <p class="font-black ">فقط وقدرة :- </p>
+        <p class="ms-2">{{tafkeet(reportData()?.formTotal?.totalNet)}}</p>
+    </div>
+    <!-- التوقيعات -->
+    <div class="grid grid-cols-3 mt-10 text-center border-b pb-6">
+        <div class="">
+            <p class="font-black text-slate-800  mb-4 ">مسؤول المرتبات</p>
+            <div class="h-0.5 bg-slate-200 w-3/4 mx-auto"></div>
+        </div>
+        <div class="">
+            <p class="font-black text-slate-800  mb-4 ">يعتمد مدير عام/</p>
+            <div class="h-0.5 bg-slate-200 w-3/4 mx-auto"></div>
+        </div>
+        <div class="">
+            <p class="font-black text-slate-800  mb-4 ">رئيس القطاع</p>
+            <div class="h-0.5 bg-slate-200 w-3/4 mx-auto"></div>
+        </div>
+
+    </div>
+     }@else if(reportType() === 'empsForm'){
+        <!-- الاستمارة  -->
+        <div class=" shadow-xl border  mt-2  rounded-lg overflow-hidden">
+            <table class="w-full text-sm text-center ">
+                <thead class="text-sm">
+                    <!-- upper head  -->
+                    <tr class="bg-gray-200 border-b-0 text-black font-bold">
+                        <th rowspan="2" class=" p-1  w-18">كود الموظف</th>
+                        <th class=" p-2 ">قيمة المكافأة</th>
+                        <th class=" p-2 ">شيخوخة 12%</th>
+                        <th class=" p-2 ">مرضى 3%</th>
+                        <th class=" p-2 ">إصابة 1.25%</th>
+                        <th class=" p-2 ">بطالة 1%</th>
+                        <th class=" p-2 ">مكافأة 1%</th>
+                        <th class=" p-2 ">جملة الاستحقاق</th>
+                        <th rowspan="2" class=" p-2  w-24 ">الصافي</th>
+                        <th rowspan="2" class=" p-2  w-48">اسم الموظف</th>
+                        <th rowspan="2" class="w-18"></th>
+                    </tr>
+                        <!-- lower header  -->
+                    <tr class="bg-gray-200 border-b font-bold ">
+                        <th class=" p-2 ">شيخوخة 9%</th>
+                        <th class=" p-2 ">بطالة 1%</th>
+                        <th class=" p-2 ">مكافأة 1%</th>
+                        <th class=" p-2 ">--</th>
+                        <th class=" p-2 ">الضرائب</th>
+                        <th class=" p-2 ">صـ الشهداء</th>
+                        <th class=" p-2 ">جملة المستقطع</th>
+                    </tr>
+                </thead>
+                
+                <tbody>
+                    @for (emp of reportData()?.emps; track emp.code) {
+                        <!-- upper  -->
+                        <tr class="font-bold border-b border-dashed border-gray-500 ">
+                            <td rowspan="2" class="  bg-white">{{ emp.code }}</td>
+                            <td class="p-1">{{ toAr(emp.value) }}</td>
+                            <td class="p-1">{{ toAr(emp.comInsurance.oldAge_12) }}</td>
+                            <td class="p-1">{{ toAr(emp.comInsurance.health_3) }}</td>
+                            <td class="p-1">{{ toAr(emp.comInsurance['workInjury_1.25']) }}</td>
+                            <td class="p-1">{{ toAr(emp.comInsurance.unemployment_1) }}</td>
+                            <td class="p-1">{{ toAr(emp.comInsurance.bonus_1) }}</td>
+                            <td class="p-1  bg-slate-50">{{ toAr(emp.dues) }}</td>
+                            <td rowspan="2" class="p-1 font-black text-sm bg-gray-50">{{ toAr(emp.net) }}</td>
+                            <td rowspan="2" class="p-1 text-right  bg-white">
+                                {{ emp.name }}
+                                <span class="text-[9px] block text-end text-slate-500">{{ emp }}</span> 
+                            </td>
+                            <td rowspan="2" class="p-1 "></td>
+                        </tr>
+                                <!-- lower  -->
+                        <tr class="font-bold border-b bg-gray-50/50">
+                            <td class="p-1 ">{{ toAr(emp.empInsurance.oldAge_9) }}</td>
+                            <td class="p-1 ">{{ toAr(emp.empInsurance.unemployment_1) }}</td>
+                            <td class="p-1 ">{{ toAr(emp.empInsurance.bonus_1) }}</td>
+                            <td class="p-1 ">---</td>
+                            <td class="p-1 ">{{ toAr(emp.taxes) }}</td>
+                            <td class="p-1 ">{{ toAr(emp.warMartyrs) }}</td>
+                            <td class="p-1 font-bold">{{ toAr(emp.deducted) }}</td>
+                        </tr>
+                    }
+                </tbody>
+
+                <!-- totals  -->
+                <tfoot class="bg-green-100 font-bold text-sm border-t border-black">
+                    <tr class="border-b border-dashed  ">
+
+                        <td rowspan="2"  class="p-1 text-center">
+                            <div class="">الإجمالي العــــام</div>
+                        </td>
+                        <td class="p-1.5">{{ toAr(reportData()?.formTotal?.totalValue) }}</td>
+                        <td class="p-1.5">{{ toAr(reportData()?.formTotal?.totalComInsurance?.oldAge_12) }}</td>
+                        <td class="p-1.5">{{ toAr(reportData()?.formTotal?.totalComInsurance?.health_3) }}</td>
+                        <td class="p-1.5">{{ toAr(reportData()?.formTotal?.totalComInsurance?.['workInjury_1.25']) }}</td>
+                        <td class="p-1.5">{{ toAr(reportData()?.formTotal?.totalComInsurance?.unemployment_1) }}</td>
+                        <td class="p-1.5">{{ toAr(reportData()?.formTotal?.totalComInsurance?.bonus_1) }}</td>
+                        <td class="p-1.5">{{ toAr(reportData()?.formTotal?.totalDues) }}</td>
+                        <td rowspan="2" class="p-1.5 ">{{ toAr(reportData()?.formTotal?.totalNet) }}</td>
+                        <td rowspan="2"  class="p-1.5 text-center">
+                            <div class=" mt-1">عدد الموظفين: {{ reportData()?.emps?.length }}</div>
+                        </td>
+                        <td rowspan="2"></td>
+                    </tr>
+                    <tr class="p-1.5">
+                        <td class="p-1.5 ">{{ toAr(reportData()?.formTotal?.totalEmpInsurance?.oldAge_9) }}</td>
+                        <td class="p-1.5 ">{{ toAr(reportData()?.formTotal?.totalEmpInsurance?.unemployment_1) }}</td>
+                        <td class="p-1.5 ">{{ toAr(reportData()?.formTotal?.totalEmpInsurance?.bonus_1) }}</td>
+                        <td class="p-1.5 ">---</td>
+                        <td class="p-1.5 ">{{ toAr(reportData()?.formTotal?.totalTaxes) }}</td>
+                        <td class="p-1.5 ">{{ toAr(reportData()?.formTotal?.totalWarMartyrs) }}</td>
+                        <td class="p-1.5 font-bold">{{ toAr(reportData()?.formTotal?.totalDeducated) }}</td>
+                    </tr>
+                </tfoot>
+            </table>
+        </div>
+
+
+
+     }
+
+</div>

@@ -5,7 +5,7 @@ export const NAV_LANG = {
     lang: "اللغة",
     home: "الرئيسية",
     salaries: "المرتبات",
-    bonus: "المكافآت",
+    bonus: "مرتب ومكافات",
     reports:"الاستعلامات والتقارير",
     settings: "الإعدادات",
     users: "المستخدمين",

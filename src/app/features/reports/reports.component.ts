@@ -2,6 +2,7 @@ import { Component, inject, OnInit, signal } from '@angular/core';
 import { FormBuilder, FormGroup, ReactiveFormsModule, Validators, ɵInternalFormsSharedModule } from '@angular/forms';
 import { Iuser } from '../../core/models/iuser';
 import { FormsReportsService } from '../../core/services/forms-reports.service';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-reports',
@@ -12,6 +13,7 @@ import { FormsReportsService } from '../../core/services/forms-reports.service';
 export class ReportsComponent implements OnInit {
   private readonly fb =inject(FormBuilder);
   private readonly formsReports = inject(FormsReportsService)
+  private readonly router = inject(Router)
 
   user:Iuser = {} as Iuser ;
   ngOnInit(): void {
@@ -29,8 +31,7 @@ export class ReportsComponent implements OnInit {
     user:['']
   })
 
-  currForms = signal<Iform[]>([] )   ; 
-
+  currForms = signal<Iform[]>([])   ; 
 getForms(){
   if(this.filterForm.invalid) return ;
   this.filterForm.updateValueAndValidity();
@@ -49,12 +50,20 @@ getForms(){
   })
 }
 
+ currForm = signal<Iform | null>(null)
+print(ID:number , type:string){
+  this.currForm.set(null)
+  if(this.currForms().length>0){
+    this.currForm.set( this.currForms().find(form => form.id === ID)|| null) 
+    if(this.currForm()) localStorage.setItem('currForm', JSON.stringify(this.currForm()));
+    const url = this.router.serializeUrl(this.router.createUrlTree(['/reports-viewer',type]));
+    window.open(url, '_blank');
+  }else{
+    alert('عفواً لم يتم العثور على بيانات الاستمارة ')
+  }
 
-// this.filterForm.valueChanges.subscribe(()=>{
-//   this.getforms();
-// })
-// this.filterForm.valueChanges.subscribe(() => {
-//   this.getForms(); // هيبحث لوحده أول ما أي قيمة تتغير
-// });
+}
+
+
 
 }

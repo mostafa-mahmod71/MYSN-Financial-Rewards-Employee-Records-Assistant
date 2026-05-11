@@ -5,12 +5,10 @@
 
   export const loadingInterceptor: HttpInterceptorFn = (req, next) => {
     const loadings =inject(LoadingService);
-    console.log('هنا بدا الانترسيبتور')
     loadings.show();
     return next(req).pipe(
       
       finalize(()=>{
-        console.log('هنا انتهى الانترسيبتور'),
         loadings.hide()
       } 
     )
