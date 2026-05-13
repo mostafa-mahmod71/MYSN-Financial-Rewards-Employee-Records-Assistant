@@ -315,6 +315,79 @@
 
 
 
+     }@else if(reportType() === 'colecInsh'){
+        <!-- الاستمارة  -->
+        <div class=" shadow-xl border  mt-7  rounded overflow-hidden">
+            <table class="w-full text-sm text-center ">
+                <thead class="text-sm">
+                    <!--  head  -->
+                    <tr class=" bg-gray-200 font-bold">
+                        <th class="border p-3 "> شامل التأمينات</th>
+                        <th class="border p-3 ">شيخوخة 12%</th>
+                        <th class="border p-3 ">مرضى 3%</th>
+                        <th class="border p-3 ">إصابة 1.25%</th>
+                        <th class="border p-3 ">بطالة 1%</th>
+                        <th class="border p-3 ">مكافأة 1%</th>
+                        <th class="border p-3 ">شيخوخة 9%</th>
+                        <th class="border p-3 ">بطالة 1%</th>
+                        <th class="border p-3 ">مكافأة 1%</th>
+                        <th class="border p-3"> اجمالي التأمينات</th>
+                    </tr>
+
+                </thead>
+                
+                <tbody>
+                        <!-- upper  -->
+                        <tr class="font-bold   ">
+                            <td class="border p-5">{{ toAr((reportData()?.formTotal?.totalComInsurance?.total || 0) + (reportData()?.formTotal?.totalEmpInsurance?.total || 0)) }}</td>
+                            <td class="border p-5">{{ toAr(reportData()?.formTotal?.totalComInsurance?.oldAge_12) }}</td>
+                            <td class="border p-5">{{ toAr(reportData()?.formTotal?.totalComInsurance?.health_3) }}</td>
+                            <td class="border p-5">{{ toAr(reportData()?.formTotal?.totalComInsurance?.['workInjury_1.25']) }}</td>
+                            <td class="border p-5">{{ toAr(reportData()?.formTotal?.totalComInsurance?.unemployment_1) }}</td>
+                            <td class="border p-5">{{ toAr(reportData()?.formTotal?.totalComInsurance?.bonus_1) }}</td>
+                            <td class="border p-5">{{ toAr(reportData()?.formTotal?.totalEmpInsurance?.oldAge_9) }}</td>
+                            <td class="border p-5">{{ toAr(reportData()?.formTotal?.totalEmpInsurance?.unemployment_1) }}</td>
+                            <td class="border p-5">{{ toAr(reportData()?.formTotal?.totalEmpInsurance?.bonus_1) }}</td>
+                            <td class="border p-5">{{ toAr((reportData()?.formTotal?.totalComInsurance?.total || 0) + (reportData()?.formTotal?.totalEmpInsurance?.total || 0)) }}</td>
+                        </tr>
+
+                </tbody>
+
+                <!-- totals  -->
+                <!-- <tfoot class="bg-green-100 font-bold text-sm border-t border-black">
+                    <tr class="border-b border-dashed  ">
+
+                        <td rowspan="2"  class="p-1 text-center">
+                            <div class="">الإجمالي العــــام</div>
+                        </td>
+                        <td class="p-1.5">{{ toAr(reportData()?.formTotal?.totalValue) }}</td>
+                        <td class="p-1.5">{{ toAr(reportData()?.formTotal?.totalComInsurance?.oldAge_12) }}</td>
+                        <td class="p-1.5">{{ toAr(reportData()?.formTotal?.totalComInsurance?.health_3) }}</td>
+                        <td class="p-1.5">{{ toAr(reportData()?.formTotal?.totalComInsurance?.['workInjury_1.25']) }}</td>
+                        <td class="p-1.5">{{ toAr(reportData()?.formTotal?.totalComInsurance?.unemployment_1) }}</td>
+                        <td class="p-1.5">{{ toAr(reportData()?.formTotal?.totalComInsurance?.bonus_1) }}</td>
+                        <td class="p-1.5">{{ toAr(reportData()?.formTotal?.totalDues) }}</td>
+                        <td rowspan="2" class="p-1.5 ">{{ toAr(reportData()?.formTotal?.totalNet) }}</td>
+                        <td rowspan="2"  class="p-1.5 text-center">
+                            <div class=" mt-1">عدد الموظفين: {{ reportData()?.emps?.length }}</div>
+                        </td>
+                        <td rowspan="2"></td>
+                    </tr>
+                    <tr class="p-1.5">
+                        <td class="p-1.5 ">{{ toAr(reportData()?.formTotal?.totalEmpInsurance?.oldAge_9) }}</td>
+                        <td class="p-1.5 ">{{ toAr(reportData()?.formTotal?.totalEmpInsurance?.unemployment_1) }}</td>
+                        <td class="p-1.5 ">{{ toAr(reportData()?.formTotal?.totalEmpInsurance?.bonus_1) }}</td>
+                        <td class="p-1.5 ">---</td>
+                        <td class="p-1.5 ">{{ toAr(reportData()?.formTotal?.totalTaxes) }}</td>
+                        <td class="p-1.5 ">{{ toAr(reportData()?.formTotal?.totalWarMartyrs) }}</td>
+                        <td class="p-1.5 font-bold">{{ toAr(reportData()?.formTotal?.totalDeducated) }}</td>
+                    </tr>
+                </tfoot> -->
+            </table>
+        </div>
+
+
+
      }
 
 </div>
