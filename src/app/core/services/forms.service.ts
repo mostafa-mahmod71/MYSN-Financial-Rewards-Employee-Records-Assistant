@@ -1,6 +1,6 @@
 import { HttpClient } from '@angular/common/http';
 import { inject, Injectable, OnInit, signal } from '@angular/core';
-import { environment } from '../../../environments/environment';
+import { environment } from '../../../environments/environment.development';
 import { last, Observable } from 'rxjs';
 
 @Injectable({
@@ -14,11 +14,25 @@ export class FormsService implements OnInit {
   ngOnInit(): void {
     this.getAllForms()
   }
+      //  with json-server || api
+  // getAllForms():void{
+  //    this.httpClient.get<any[]>(`${environment.baseUrl}/allForms`).subscribe({
+  //     next:(res)=>{
+  //       if(res){
+  //         this.allForms.set(res)
+  //       }
+  //     },error:(err)=>{
+  //       console.log(err)
+  //     }
+  //   })
+  // }
+
+      // static json 
   getAllForms():void{
-     this.httpClient.get<any[]>(`${environment.baseUrl}/allForms`).subscribe({
+     this.httpClient.get<{allForms:any[]}>(`${environment.baseUrl}`).subscribe({
       next:(res)=>{
         if(res){
-          this.allForms.set(res)
+          this.allForms.set(res.allForms)
         }
       },error:(err)=>{
         console.log(err)
@@ -32,7 +46,4 @@ export class FormsService implements OnInit {
 
 
 
-  // net  في ال function دي هنمسك 
-  //  هنمسك كل emp ونلوب عليه بناءا على نوع التأمينات هناخد الشامل نحسب عليه او هيكون زيرو وهنلوب على النسب نضربها في الشامل
-  //  بتاعت ال 11 اهم عشان نطلع الصافي وهيتسجل نوع التأمينات مع ال موظف عشان العرض وكذلك في الضرايب هنسجل الوعاء نفسو وممكن نسجل مبلغ الضريبة والشهداء
 }

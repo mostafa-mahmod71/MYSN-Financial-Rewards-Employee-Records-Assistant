@@ -195,33 +195,37 @@ export class BonusComponent implements OnInit, OnDestroy {
             totalNet:calcedEmps.reduce((acc:number , e:any)=> acc +Number(e.net), 0),
           }
       }
-
-    this.formsService.saveForm(finalForm).subscribe({
-      next:()=> {
-        const allReq =  calcedEmps.map((emp)=>{
-          const updatedBoxes ={
-            taxBox: emp.taxBox,
-            inshBox:emp.inshBox
-          } 
-           return this.empSearch.updateBoxes(emp.id ,updatedBoxes )
-        })
-        if(allReq.length >0 ){
-            forkJoin(allReq).subscribe({
-              next:(res)=>{
-                  alert(` form saved succesfully with all employees :) ${res.length} `)
-                  this.clearForm(true)
+        //  with json-server || api
+//     this.formsService.saveForm(finalForm).subscribe({
+//       next:()=> {
+//         const allReq =  calcedEmps.map((emp)=>{
+//           const updatedBoxes ={
+//             taxBox: emp.taxBox,
+//             inshBox:emp.inshBox
+//           } 
+//            return this.empSearch.updateBoxes(emp.id ,updatedBoxes )
+//         })
+//         if(allReq.length >0 ){
+//             forkJoin(allReq).subscribe({
+//               next:(res)=>{
+//                   alert(` form saved succesfully with all employees :) ${res.length} `)
+//                   this.clearForm(true)
                 
-              },
-            error:(err)=> console.log('Error updating boxes:', err)
-          })
+//               },
+//             error:(err)=> console.log('Error updating boxes:', err)
+//           })
         
-    } else{
-      this.clearForm(true)
-    }
-  },error:(err)=> console.log('error saving form ' , err)
-});
+//     } else{
+//       this.clearForm(true)
+//     }
+//   },error:(err)=> console.log('error saving form ' , err)
+// });
+
+  alert("تم حساب البيانات ولكن لا يمكن تخزينا في الوضع الحالي نظرا للاعتماد على ملف json static ")
+  this.clearForm(true)
+
 }else{
-  console.log("form isn't valid try again later ")
+  alert("form isn't valid ")
 }
 }
   

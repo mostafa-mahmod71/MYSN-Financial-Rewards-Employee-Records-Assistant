@@ -18,8 +18,9 @@ export class ReportsComponent implements OnInit {
   user:Iuser = {} as Iuser ;
   ngOnInit(): void {
   this.user =  JSON.parse(sessionStorage.getItem('userToken')|| '[]');
-  if(this.user.name){
+  if(this.user.name && this.user.role){
     this.filterForm.patchValue({user:this.user.name})
+    this.filterForm.patchValue({roleUser:this.user.role})
 
   }
   }
@@ -28,7 +29,8 @@ export class ReportsComponent implements OnInit {
     type:['all'],
     month:[String(new Date().getMonth()+1),Validators.required],
     year:[String(new Date().getFullYear()),Validators.required],
-    user:['']
+    user:[''],
+    roleUser:['']
   })
 
   currForms = signal<Iform[]>([])   ; 
@@ -36,12 +38,8 @@ getForms(){
   if(this.filterForm.invalid) return ;
   this.filterForm.updateValueAndValidity();
 
-  // let type = this.filterForm.get('type')?.value
-  // let month = this.filterForm.get('month')?.value
-  // let year = this.filterForm.get('year')?.value
-  // let user = this.filterForm.get('user')?.value
-  let {type , month , year , user} = this.filterForm.value
-  this.formsReports.getforms(type , month , year ,user).subscribe({
+  let {type , month , year , user , roleUser} = this.filterForm.value
+  this.formsReports.getforms(type , month , year ,user , roleUser).subscribe({
     next:(res)=>{
       this.currForms.set(res) ;
       if(res.length === 0) console.log(' لا توجد نتائج ')
