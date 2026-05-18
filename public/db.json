@@ -2,8 +2,8 @@
   "users": [
     {
       "id": 1,
-      "name": "mostafa",
-      "pass": "mostafa777",
+      "name": "admin",
+      "pass": "admin",
       "phone": "",
       "role": "admin"
     },
@@ -131,14 +131,14 @@
       }
     },
     {
-      "formDescription": "hgvjhgjkj",
+      "formDescription": "test 1",
       "formType": "mixed",
       "formMonth": "4",
       "formYear": "2023",
       "emps": [
         {
-          "code": "1193",
-          "name": "مجدى طلعت مهنى بسالى ",
+          "code": "305070",
+          "name": "  ابراهيم علي محمد احمد  ",
           "value": "1000",
           "inshType": "upAge",
           "inshBox": "5000",
@@ -155,8 +155,8 @@
           "taxPerc": ".1"
         },
         {
-          "code": "30153955",
-          "name": "مصطفى محمود محمد يس السيد",
+          "code": "30305010",
+          "name": "ابراهيم على محمد",
           "value": "10000",
           "inshType": "without",
           "inshBox": "",
@@ -164,8 +164,8 @@
           "taxPerc": ""
         },
         {
-          "code": "301016",
-          "name": "احمد يحيى محمود احمد",
+          "code": "105030",
+          "name": "محمود محمد على ",
           "value": "2000",
           "inshType": "upAge",
           "inshBox": "1000",
@@ -221,7 +221,7 @@
       }
     },
     {
-      "formDescription": "مكافاة مستقلة تست 1",
+      "formDescription": "مكافاة  تست 2",
       "formType": "mixed",
       "formMonth": "4",
       "formYear": "2026",
@@ -593,7 +593,7 @@
       "id": 5
     },
     {
-      "formDescription": "مكافاة مستقلة نظير الجهود غير العاديه ش مالية",
+      "formDescription": "مكافاة  test 5     ",
       "formType": "mixed",
       "formMonth": "5",
       "formYear": "2026",
@@ -777,7 +777,7 @@
       "id": 6
     },
     {
-      "formDescription": "مستقلة نظير الجهود خلال الفتره المنقضيه ",
+      "formDescription": "test 20202020202",
       "formType": "mixed",
       "formMonth": "5",
       "formYear": "2026",
@@ -1199,7 +1199,7 @@
       "id": 7
     },
     {
-      "formDescription": "مستقلة نظير الجهود خلال الفتره المنقضيه ",
+      "formDescription": "مكافاة نظير الجهود خلال شهر مايو 2026",
       "formType": "mixed",
       "formMonth": "5",
       "formYear": "2026",
@@ -1621,7 +1621,7 @@
       "id": 8
     },
     {
-      "formDescription": "مستقلة نظير الجهود خلال الفتره المنقضيه ",
+      "formDescription": "مكافات مستقلة خلال مايو 2026",
       "formType": "mixed",
       "formMonth": "5",
       "formYear": "2026",
