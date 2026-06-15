@@ -28,28 +28,35 @@ export class SigninComponent {
     pass:['',[Validators.required,Validators.minLength(4)]]
   })
 
-login(){
+login(guest?:string){
   this.logError.set(null);
+if(guest){
+  let log:any = {name:guest, role:guest}
+    sessionStorage.setItem('userToken' ,JSON.stringify(log))
+    this.user.set(log)
+    this.router.navigate(['/home'])
 
+}else{
   if(this.loginForm.valid){
-      this.authService.signin(this.loginForm.value).subscribe({
-    next:(res)=>{
-      if(res && res.length>0){
-        this.user.set(res[0])
-        sessionStorage.setItem('userToken' ,JSON.stringify(res[0]))
-        this.router.navigate(['/home'])
-
-      }else{
-        this.logError.set("wrong name or password");
+    this.authService.signin(this.loginForm.value).subscribe({
+      next:(res)=>{
+        if(res && res.length>0){
+          this.user.set(res[0])
+          sessionStorage.setItem('userToken' ,JSON.stringify(res[0]))
+          this.router.navigate(['/home'])
+          
+        }else{
+          this.logError.set("wrong name or password");
+        }
+      },
+      error:(err)=>{
+        this.logError.set("server error : " + err)
       }
-    },
-    error:(err)=>{
-      this.logError.set("server error : " + err)
-    }
-  })
+    })
   }else{
     this.loginForm.markAllAsTouched()
   }
+}
 
 }
 }

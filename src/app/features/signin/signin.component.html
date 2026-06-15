@@ -71,11 +71,19 @@
 
         <button
         type="submit"
-        
         class="w-full cursor-pointer py-3 text-lg font-bold rounded-xl bg-blue-600 hover:bg-blue-500 text-white transition-all shadow-lg shadow-blue-500/20">
             {{dict().Confirm}}
         </button>
+        <div class="text-center p-3">
+            <h4 class="text-xl "> login as a
+                <span
+                (click)="login('user')"
+                 class="font-bold text-blue-300 hover:text-blue-500 cursor-pointer">User</span>
+                 or 
+                <span
+                (click)="login('admin')" class="font-bold text-blue-300 hover:text-blue-500 cursor-pointer"> Admin </span></h4>
 
+        </div>
             @if(logError()){
                         <div class="my-5 flex items-center p-4 text-red-100 bg-red-500/20 border border-red-500/50 rounded-xl backdrop-blur-md animate-pulse">
         <i class="fa-solid fa-circle-exclamation me-3 text-red-400"></i>
